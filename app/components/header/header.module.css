@@ -1,0 +1,185 @@
+.customHeader {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.leftContainer {
+  display: flex;
+  gap: 12px;
+}
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8c704c;
+}
+
+.rightContainer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #8c704c;
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+.rightContainerMobileMenu {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+  color: #8c704c;
+  margin-top: 40px;
+  padding-left: 16px;
+}
+
+.rightContainerMobileMenu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #8c704c;
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+.leftContainer nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.leftContainer nav .linkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+.leftContainer nav .linkWrapper:hover img {
+  opacity: 100%;
+}
+
+.leftContainer nav .linkWrapper img {
+  width: 100%;
+  height: 8px;
+  object-fit: contain;
+  opacity: 0%;
+  transition: 0.3s ease all;
+}
+
+.menuIcon {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuIcon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: none;
+}
+
+.dialogBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.floatingMobileMenu {
+  background-color: black;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 6;
+  padding: 20px;
+}
+.floatingMobileMenu .menuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.floatingMobileMenu .menuHeader .closeMenuIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floatingMobileMenu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 68px;
+  padding-left: 16px;
+  width: fit-content;
+}
+
+.floatingMobileMenu nav .linkWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  width: fit-content;
+}
+
+.floatingMobileMenu nav .linkWrapper img {
+  width: 100%;
+  height: 8px;
+  object-fit: contain;
+  opacity: 0%;
+  transition: 0.3s ease all;
+}
+
+.floatingMobileMenu nav .linkWrapper:hover img {
+  opacity: 100%;
+}
+
+@media screen and (max-width: 942px) {
+  .leftContainer nav {
+    display: none;
+  }
+  .menuIcon img {
+    display: block;
+  }
+}
+@media screen and (max-width: 585px) {
+  .rightContainer a {
+    display: none;
+  }
+  .customHeader {
+    padding-inline: 16px;
+  }
+  .leftContainer .logo {
+    width: 120px !important;
+    height: 50px !important;
+    object-fit: contain;
+  }
+}
