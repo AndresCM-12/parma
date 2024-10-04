@@ -1,0 +1,59 @@
+.whereFindUs {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  gap: 50px;
+  padding-block: 120px;
+  padding-inline: 16px;
+}
+
+.whereFindUs .brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.whereFindUs h2 {
+  font-weight: 500;
+  font-size: 36px;
+  color: #8c704c;
+  display: flex;
+  width: fit-content;
+  text-transform: uppercase;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.whereFindUs .brands a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  background-color: #8c704c;
+}
+
+.whereFindUs .brands a img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  position: static;
+  z-index: 1;
+}
+
+.whereFindUs .link {
+  font-weight: 400;
+  font-size: 14px;
+  color: #8c704c;
+  border: 1px solid #8c704c;
+  padding: 8px 24px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-inline: auto;
+}

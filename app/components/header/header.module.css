@@ -1,9 +1,14 @@
 .customHeader {
+  width: 100vw;
   background-color: #000;
   color: white;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  left: 0;
 }
 
 .leftContainer {
@@ -91,25 +96,25 @@
 }
 
 .dialogBackground {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5;
 }
 .floatingMobileMenu {
   background-color: black;
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 0px;
-  width: 100%;
+  width: 100vw;
   max-width: 480px;
   height: 100%;
   color: white;
   transition: all 0.3s ease;
-  z-index: 6;
+  z-index: 11;
   padding: 20px;
 }
 .floatingMobileMenu .menuHeader {

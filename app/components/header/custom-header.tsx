@@ -6,7 +6,6 @@ import linkTrailWhite from "../../../public/images/trail_white.svg";
 import spotifyLogo from "../../../public/images/spotify-logo.svg";
 import openMenuIcon from "../../../public/images/open-menu.svg";
 import MobileMenu from "./mobile-menu";
-import { link } from "fs";
 
 export default function CustomHeader() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);

@@ -31,30 +31,38 @@ export default function CustomFooter() {
       </div>
       <div className={styles.rightWrapper}>
         <div className={styles.iconWrappers}>
-          <img
-            src={facebookIcon.src}
-            alt="Ícono de facebook"
-            width={20}
-            height={20}
-          />
-          <img
-            src={instagramIcon.src}
-            alt="Ícono de instagram"
-            width={20}
-            height={20}
-          />
-          <img
-            src={youtubeIcon.src}
-            alt="Ícono de youtube"
-            width={20}
-            height={20}
-          />
-          <img
-            src={spotifyIcon.src}
-            alt="Ícono de spotify"
-            width={20}
-            height={20}
-          />
+          <a href="http://facebook.com">
+            <img
+              src={facebookIcon.src}
+              alt="Ícono de facebook"
+              width={20}
+              height={20}
+            />
+          </a>
+          <a href="http://facebook.com">
+            <img
+              src={instagramIcon.src}
+              alt="Ícono de instagram"
+              width={20}
+              height={20}
+            />
+          </a>
+          <a href="http://facebook.com">
+            <img
+              src={youtubeIcon.src}
+              alt="Ícono de youtube"
+              width={20}
+              height={20}
+            />
+          </a>
+          <a href="http://facebook.com">
+            <img
+              src={spotifyIcon.src}
+              alt="Ícono de spotify"
+              width={20}
+              height={20}
+            />
+          </a>
         </div>
         <p className={styles.title}>ÚNETE A NUESTRO NEWSLETTER</p>
         <form action="POST">
