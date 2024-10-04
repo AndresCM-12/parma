@@ -7,6 +7,7 @@ import maridajeCover from "../public/images/maridaje-home-cover.webp";
 import WhereFindUs from "./components/home/where-find-us";
 import FeaturedBlog from "./components/home/featured-blog";
 import FeaturedRecipe from "./components/home/featured-recipe";
+import FeaturedProducts from "./components/home/featured-products";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
           </p>
           <a href="/marca">QUIENES SOMOS</a>
         </div>
+        <FeaturedProducts />
         <FeaturedRecipe />
         <FeaturedBlog />
         <WhereFindUs />
