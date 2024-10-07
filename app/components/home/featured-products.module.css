@@ -14,6 +14,7 @@
 }
 
 .featuredProductWrapper h2 {
+  display: flex;
   font-weight: 500;
   font-size: 38px;
   color: #8c704c;
@@ -71,4 +72,16 @@
   height: 300px;
   object-fit: contain;
   position: relative;
+}
+
+@media screen and (max-width: 438px) {
+  .featuredProductWrapper .titleWrapper img {
+    position: absolute !important;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    right: 120px !important;
+    bottom: 0px !important;
+  }
 }

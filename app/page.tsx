@@ -8,6 +8,7 @@ import WhereFindUs from "./components/home/where-find-us";
 import FeaturedBlog from "./components/home/featured-blog";
 import FeaturedRecipe from "./components/home/featured-recipe";
 import FeaturedProducts from "./components/home/featured-products";
+import FeaturedReviews from "./components/home/featured-reviews";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           <h2>Descubre tu maridaje</h2>
           <a href="/maridaje">Conocer más</a>
         </div>
+        <FeaturedReviews />
       </main>
       <CustomFooter />
     </>

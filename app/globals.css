@@ -22,3 +22,10 @@ a {
 .swiper-pagination-bullet-active {
   background: #8c704c !important;
 }
+
+@media screen and (max-width: 745px) {
+  #featured-reviews-left-arrow,
+  #featured-reviews-right-arrow {
+    display: none;
+  }
+}
