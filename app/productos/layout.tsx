@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: "Marca premium de Sabori",
 };
 
-//Add google fonts gotham
-
 export default function RootLayout({
   children,
 }: Readonly<{

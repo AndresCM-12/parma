@@ -272,7 +272,7 @@ function getDifficulty(difficulty: number) {
   return (
     <div className={styles.difficultyWrapper}>
       <h3>
-        Dificultad:
+        Dificultad:{" "}
         {difficulty === 1 ? "Fácil " : difficulty === 2 ? "Media " : "Difícil "}
       </h3>
       {difficulty === 1 ? (
