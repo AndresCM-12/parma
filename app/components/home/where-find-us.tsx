@@ -46,7 +46,7 @@ export default function WhereFindUs() {
           </a>
         ))}
       </div>
-      <a className={styles.link} href="/encuentra-tu-tienda">Encuentra tu tienda</a>
+      <a className={styles.link} href="/donde-comprar">Encuentra tu tienda</a>
     </div>
   );
 }
