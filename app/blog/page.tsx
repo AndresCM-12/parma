@@ -2,7 +2,7 @@
 import CustomHeader from "../components/header/custom-header";
 import styles from "./page.module.css";
 import CustomFooter from "../components/footer/custom-footer";
-import blogCover from "../../public/images/blog-cover.png";
+import blogCover from "../../public/images/blog-cover.webp";
 import { useLayoutEffect, useState } from "react";
 
 export default function Home() {
