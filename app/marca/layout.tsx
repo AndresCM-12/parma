@@ -7,7 +7,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Parma | Marca",
+  title: "Parma | ¿Quiénes somos?",
   description: "Marca premium de Sabori",
 };
 

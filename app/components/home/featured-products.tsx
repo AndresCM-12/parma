@@ -23,10 +23,6 @@ export default function FeaturedProducts() {
       <div className={styles.titleWrapper}>
         <h2>Nuestros productos</h2>
         <img
-          style={{
-            right: "0px !important",
-            bottom: "0px !important",
-          }}
           src={blackTrail.src}
           alt="Decoración con el logotipo de parma para el título de la sección"
         />
