@@ -6,6 +6,8 @@ import leftArrow from "../../../public/images/left-arrow-brown.svg";
 import rightArrow from "../../../public/images/right-arrow-brown.svg";
 import emptyStar from "../../../public/images/empty-star.svg";
 import fullStar from "../../../public/images/full-star.svg";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 
 export default function FeaturedReviews() {
   const [reviews, setReviews] = React.useState([
@@ -77,6 +79,13 @@ export default function FeaturedReviews() {
         spaceBetween={30}
         className={styles.swiperContainer}
         loop={true}
+        style={{ width: "100%" }}
+        modules={[Autoplay]}
+        speed={600}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
       >
         {reviews.map((review, index) => (
           <SwiperSlide
@@ -86,6 +95,7 @@ export default function FeaturedReviews() {
               flexDirection: "row",
               alignItems: "center",
               gap: "20px",
+              maxWidth: "100%",
             }}
           >
             <div className={styles.swiperSlide}>

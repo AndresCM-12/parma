@@ -22,6 +22,9 @@ a {
 .swiper-pagination-bullet-active {
   background: #8c704c !important;
 }
+#process .swiper-pagination-bullet-active {
+  background: #FFFFFF !important;
+}
 
 @media screen and (max-width: 745px) {
   #featured-reviews-left-arrow,
