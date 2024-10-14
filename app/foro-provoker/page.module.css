@@ -1,0 +1,234 @@
+.mainWrapper {
+  margin-top: 90px;
+}
+
+.mainWrapper .coverImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 600px;
+}
+
+.mainWrapper .coverImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: brightness(0.8);
+}
+
+.mainWrapper .coverImage h1 {
+  font-size: 42px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+
+.mainWrapper .coverImage p {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  max-width: 550px;
+}
+
+.headerWrapper {
+  margin-top: 120px;
+  margin-bottom: 60px;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: flex-end;
+  align-items: center;
+  padding-inline: 16px;
+}
+
+.headerWrapper h2 {
+  font-size: 38px;
+  font-weight: 500;
+  text-align: center;
+  color: #8c704c;
+}
+
+.headerWrapper img {
+  width: 100px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 60px;
+}
+
+.questionsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1000px;
+  padding-inline: 16px;
+  gap: 16px;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 28px;
+  border: 1px solid #8c704c;
+  border-radius: 20px;
+}
+
+.searchBar .iconWrapper {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8c704c;
+  border-radius: 20px;
+}
+
+.searchBar img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.searchBar input {
+  width: 100%;
+  height: 100%;
+  padding-inline: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.46);
+}
+
+.searchBar input:focus {
+  outline: none;
+  cursor: text;
+}
+
+.searchBar input::placeholder {
+  font-size: 12px;
+}
+
+.questionWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.questionsWrapper .title {
+  background-color: #8c704c;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.questionsWrapper .title h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 27.12px;
+  text-align: left;
+  color: white;
+}
+
+.questionsWrapper .body {
+  background-color: #9d9b9bb2;
+  font: 14px;
+  font-weight: 300;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.questionsWrapper .body p {
+  max-width: 780px;
+}
+
+.questionsWrapper .body img {
+  position: absolute;
+  bottom: 16px;
+  right: 32px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.createQuestionWrapper {
+  margin-block: 70px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+}
+
+.createQuestionWrapper h6 {
+  font-size: 38px;
+  font-weight: 500;
+  text-align: left;
+  color: #8c704c;
+  margin-bottom: 20px;
+}
+
+.createQuestionWrapper button {
+  width: 100%;
+  max-width: 138px;
+  height: 38px;
+  background-color: #8c704c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  justify-self: flex-end;
+  margin-top: 2ch;
+}
+
+.createQuestionWrapper textarea {
+  width: 100%;
+  height: 100px;
+  padding: 16px;
+  border: none;
+  border-radius: 0px;
+  background: #9d9b9b66;
+  color: rgba(0, 0, 0, 0.46);
+  resize: none;
+}
+
+.createQuestionWrapper textarea:focus {
+  outline: #8c704c solid 1px;
+  cursor: text;
+}
+
+@media screen and (max-width: 493px) {
+  .headerWrapper img {
+    margin-right: 120px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .headerWrapper img {
+    margin-right: 100px;
+  }
+}
+@media screen and (max-width: 376px) {
+  .headerWrapper img {
+    margin-right: 60px;
+  }
+}
