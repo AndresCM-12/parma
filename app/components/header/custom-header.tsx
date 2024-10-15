@@ -17,6 +17,7 @@ export default function CustomHeader() {
     { href: "/foro-provoker", text: "Foro Provoker" },
     { href: "/contacto", text: "Contacto" },
   ];
+
   useLayoutEffect(() => {
     if (selectedPage === "") {
       const currentPage = window.location.pathname;

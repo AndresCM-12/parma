@@ -112,6 +112,10 @@ export default function Home() {
             {stores.map((store, index) => (
               <p
                 key={index}
+                style={{
+                  opacity: store.title === selectedStore ? 1 : 0.4,
+                  fontWeight: store.title === selectedStore ? "500" : "normal",
+                }}
                 onClick={() => {
                   window.location.hash = store.title;
                   setSelectedStore(store.title);
