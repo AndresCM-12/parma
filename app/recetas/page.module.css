@@ -71,6 +71,7 @@
   padding-block: 32px;
   overflow: hidden;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .blogItem img {
