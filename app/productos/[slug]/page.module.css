@@ -1,0 +1,268 @@
+.headerWrapper {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 120px;
+  gap: 30px;
+  padding-inline: 16px;
+}
+
+.headerWrapper .image {
+  width: 100%;
+  height: 100%;
+  max-width: 350px;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  padding-inline: 20px;
+}
+
+.rightContainer h1 {
+  font-size: 48px;
+  line-height: 42px;
+  font-weight: 500;
+  text-align: left;
+  max-width: 620px;
+}
+
+.rightContainer .titleWrapper img {
+  width: 200px;
+  height: 60px;
+  object-fit: contain;
+  margin-left: -35px;
+}
+
+.rightContainer span {
+  color: #8c704c;
+  font-weight: 600;
+}
+
+.rightContainer p {
+  max-width: 620px;
+  font-size: 14px;
+}
+
+.detailsWrapper {
+  display: flex;
+  gap: 24px;
+  margin-block: 20px;
+  flex-wrap: wrap;
+}
+
+.detailsWrapper .detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.detailsWrapper .detail img {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  object-fit: contain;
+}
+
+.focusWrapper {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-inline: auto;
+  margin-bottom: 30px;
+  padding-inline: 16px;
+}
+
+.mainWrapper .focusWrapper h3 {
+  display: block;
+  width: fit-content;
+  font-size: 38px;
+  line-height: 38px;
+  font-weight: 500;
+  margin-block: 20px;
+  text-align: center;
+  color: #8c704c;
+}
+
+.mainWrapper .focusWrapper img {
+  width: 200px;
+  height: 12px;
+  object-fit: contain;
+  margin-top: -16px;
+}
+
+.mainWrapper .productsWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 120px;
+  height: fit-content;
+  padding-inline: 16px;
+}
+
+.mainWrapper .productsWrapper .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product h4 {
+  color: #8c704c;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.product p {
+  font-size: 14px;
+  color: #c22e2e;
+  font-weight: 500;
+}
+
+.mainWrapper .productsWrapper .product img {
+  width: 300px;
+  height: 300px;
+}
+
+@media screen and (max-width: 820px) {
+  .headerWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headerWrapper .image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .rightContainer {
+    padding-inline: 0;
+  }
+  .detailsWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.reviewWrapper {
+  width: 100%;
+  max-width: 1300px;
+  height: fit-content;
+  margin-inline: auto;
+  margin-bottom: 120px;
+}
+
+.reviewWrapper h5 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 22.6px;
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding: 30px;
+  background-color: #8c704c;
+  color: white;
+  text-transform: uppercase;
+}
+.reviewWrapper .swiperSlide {
+  width: 100%;
+  height: fit-content;
+}
+
+.swiperSlide {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  padding-block: 30px;
+  gap: 30px;
+}
+
+.review .image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 100%;
+}
+
+.review h6 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22.6px;
+  color: black;
+  margin-bottom: 4px;
+}
+
+.review p {
+  font-size: 12px;
+}
+
+.review .starWrapper {
+  display: flex;
+  gap: 0px;
+}
+.review .starWrapper img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.swiperControl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.swiperControl p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 38.4px;
+  text-align: center;
+}
+
+.swiperControl img {
+  cursor: pointer;
+  height: 48px !important;
+  width: 48px !important;
+  object-fit: contain !important;
+  width: auto;
+  position: static !important;
+  z-index: 1 !important;
+}
+
+@media screen and (max-width: 1299px) {
+  .reviewWrapper {
+    padding-inline: 16px;
+  }
+  .swiperSlide {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 820px) {
+  .reviewWrapper {
+    padding-inline: 16px;
+  }
+  .swiperSlide {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 476px) {
+  .focusWrapper {
+    align-items: center;
+  }
+}

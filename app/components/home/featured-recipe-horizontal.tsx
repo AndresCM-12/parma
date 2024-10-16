@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from "./featured-recipe-horizontal.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import leftArrow from "../../../public/images/left-arrow.svg";
 import rightArrow from "../../../public/images/right-arrow.svg";
 import timeIcon from "../../../public/images/time-icon.svg";
@@ -13,7 +13,7 @@ import "swiper/css/effect-coverflow";
 // import { fetchArrayInPost } from "@/app/utils/methods";
 // import { featuredProducts } from "@/app/utils/constants";
 
-export default function FeaturedRecipeHorizontal() {
+export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
   const [recipes, setRecipes] = useState([
     {
       link: "/recetas/platillo-de-frutas",
@@ -106,58 +106,111 @@ export default function FeaturedRecipeHorizontal() {
           modules={[Pagination]}
           grabCursor={true}
         >
-          {recipes.map((item, index) => (
-            <SwiperSlide
-              className={styles.slideWrapper}
-              style={{
-                width: "90%",
-                maxWidth: "400px",
-                height: "300px",
-                borderRadius: "20px",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                alignItems: "flex-start",
-                padding: "20px",
-                color: "white",
-              }}
-              key={index}
-            >
-              <div className={styles.titleWrapper}>
-                <div className={styles.infoWrapper}>
-                  {getDifficulty(item.dificulty)}
-                  <h3
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                    }}
-                  >
-                    {item.time}
-                    {"  "}
-                    <img
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        width: "18px",
-                        height: "18px",
-                        filter: "brightness(1)",
-                      }}
-                      src={timeIcon.src}
-                      width={18}
-                      height={18}
-                      alt="Ícono de tiempo"
-                    />
-                  </h3>
-                </div>
-              </div>
-              <div className={styles.descriptionWrapper}>
-                <p>{item.description}</p>
-              </div>
-              <img src={item.image} alt="Imagen de producto" />
-            </SwiperSlide>
-          ))}
+          {userRecipes != null
+            ? userRecipes.map((item: any, index: number) => (
+                <SwiperSlide
+                  className={styles.slideWrapper}
+                  style={{
+                    width: "90%",
+                    maxWidth: "400px",
+                    height: "300px",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    padding: "20px",
+                    color: "white",
+                  }}
+                  key={index}
+                >
+                  <div className={styles.titleWrapper}>
+                    <div className={styles.infoWrapper}>
+                      {getDifficulty(item.dificulty)}
+                      <h3
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "5px",
+                        }}
+                      >
+                        {item.time}
+                        {"  "}
+                        <img
+                          style={{
+                            position: "relative",
+                            zIndex: 1,
+                            width: "18px",
+                            height: "18px",
+                            filter: "brightness(1)",
+                          }}
+                          src={timeIcon.src}
+                          width={18}
+                          height={18}
+                          alt="Ícono de tiempo"
+                        />
+                      </h3>
+                    </div>
+                  </div>
+                  <div className={styles.descriptionWrapper}>
+                    <p>{item.description}</p>
+                  </div>
+                  <img src={item.image} alt="Imagen de producto" />
+                </SwiperSlide>
+              ))
+            : recipes.map((item, index) => (
+                <SwiperSlide
+                  className={styles.slideWrapper}
+                  style={{
+                    width: "90%",
+                    maxWidth: "400px",
+                    height: "300px",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    padding: "20px",
+                    color: "white",
+                  }}
+                  key={index}
+                >
+                  <div className={styles.titleWrapper}>
+                    <div className={styles.infoWrapper}>
+                      {getDifficulty(item.dificulty)}
+                      <h3
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "5px",
+                        }}
+                      >
+                        {item.time}
+                        {"  "}
+                        <img
+                          style={{
+                            position: "relative",
+                            zIndex: 1,
+                            width: "18px",
+                            height: "18px",
+                            filter: "brightness(1)",
+                          }}
+                          src={timeIcon.src}
+                          width={18}
+                          height={18}
+                          alt="Ícono de tiempo"
+                        />
+                      </h3>
+                    </div>
+                  </div>
+                  <div className={styles.descriptionWrapper}>
+                    <p>{item.description}</p>
+                  </div>
+                  <img src={item.image} alt="Imagen de producto" />
+                </SwiperSlide>
+              ))}
         </Swiper>
 
         <div>
