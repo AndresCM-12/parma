@@ -18,7 +18,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -26,7 +26,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -34,7 +34,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -42,7 +42,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -50,7 +50,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -58,7 +58,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
       ],
     },
@@ -72,7 +72,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -80,7 +80,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
         {
           title: "ESTILO DE VIDA",
@@ -88,7 +88,7 @@ export default function Home() {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
           link: "/blog/estilo-de-vida",
           ctaText: "Ver detalles",
-          backgroundImage: "https://via.placeholder.com/500",
+          backgroundImage: "https://via.placeholder.com/500x500",
         },
       ],
     },

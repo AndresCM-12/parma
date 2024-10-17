@@ -19,7 +19,7 @@ export default function Home() {
   const [timeLine, setTimeLine] = useState([
     {
       date: "1865",
-      image: "https://via.placeholder.com/320",
+      image: "https://via.placeholder.com/320x320",
       text: "",
     },
     {
@@ -29,29 +29,29 @@ export default function Home() {
     },
     {
       date: "2002",
-      image: "https://via.placeholder.com/320",
+      image: "https://via.placeholder.com/320x320",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     },
     {
       date: "2008",
-      image: "https://via.placeholder.com/320",
+      image: "https://via.placeholder.com/320x320",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     },
     {
       date: "Actual",
-      image: "https://via.placeholder.com/320",
+      image: "https://via.placeholder.com/320x320",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     },
   ]);
 
   const [information, setInformation] = useState([
     {
-      logo: "https://via.placeholder.com/86",
+      logo: "https://via.placeholder.com/86x86",
       title: "Misión",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
     },
     {
-      logo: "https://via.placeholder.com/86",
+      logo: "https://via.placeholder.com/86x86",
       title: "Visión",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
     },
@@ -59,17 +59,17 @@ export default function Home() {
 
   const [values, setValues] = useState([
     {
-      icon: "https://via.placeholder.com/86",
+      icon: "https://via.placeholder.com/86x86",
       title: "Valor 1",
       text: "Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmodd minim veniam, quis.",
     },
     {
-      icon: "https://via.placeholder.com/86",
+      icon: "https://via.placeholder.com/86x86",
       title: "Valor 2",
       text: "Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmodd minim veniam, quis.",
     },
     {
-      icon: "https://via.placeholder.com/86",
+      icon: "https://via.placeholder.com/86x86",
       title: "Valor 3",
       text: "Lorem ipsum dolor sit amet, conse adipiscing elit, sed do eiusmodd minim veniam, quis.",
     },
@@ -77,7 +77,7 @@ export default function Home() {
 
   const [process, setProcess] = useState([
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -85,7 +85,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -93,7 +93,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -101,7 +101,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -109,7 +109,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -117,7 +117,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",
@@ -125,7 +125,7 @@ export default function Home() {
         "Su preparación está a cargo de Maestros Jamoneros con un expertise inigualable que garantiza cada nota de sabor degustada. Es por ello que su creación es todo un proceso artesanal cuidado en cada paso.",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       title: "Serranos",
       link: "/productos/serranos",
       linkText: "Ver más",

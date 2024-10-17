@@ -11,32 +11,32 @@ export default function Home() {
     {
       title: "Serranos",
       link: "/productos/serranos",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
     {
       title: "Chistorras y chorizos",
       link: "/productos/chistorras-y-chorizos",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
     {
       title: "Salami y maduradoz",
       link: "/productos/salami-y-madurados",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
     {
       title: "jamones y pechugas",
       link: "/productos/jamones-y-pechugas",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
     {
       title: "Salchichas",
       link: "/productos/salchichas",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
     {
       title: "parmesanos",
       link: "/productos/parmesanos",
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
     },
   ]);
 

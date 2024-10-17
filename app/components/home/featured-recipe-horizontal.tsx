@@ -17,7 +17,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
   const [recipes, setRecipes] = useState([
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 1,
       time: "30 min",
       description:
@@ -26,7 +26,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 2,
       time: "30 min",
       description:
@@ -35,7 +35,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 3,
       time: "30 min",
       description:
@@ -44,7 +44,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 1,
       time: "30 min",
       description:
@@ -53,7 +53,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 2,
       time: "30 min",
       description:
@@ -62,7 +62,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 3,
       time: "30 min",
       description:
@@ -71,7 +71,7 @@ export default function FeaturedRecipeHorizontal({ userRecipes }: any) {
     },
     {
       link: "/recetas/platillo-de-frutas",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://via.placeholder.com/400x400",
       dificulty: 1,
       time: "30 min",
       description:

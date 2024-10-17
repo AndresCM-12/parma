@@ -20,17 +20,17 @@ import "swiper/css/pagination";
 export default function Home() {
   const [productDetails, setProductDetails] = useState({
     title: "PECHUGA DE PAVO",
-    image: "https://via.placeholder.com/300",
+    image: "https://via.placeholder.com/300x300",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
     details: [
       {
-        image: "https://via.placeholder.com/100",
+        image: "https://via.placeholder.com/100x100",
         title: "Tiempo de maduración",
         details: "10 meses",
       },
       {
-        image: "https://via.placeholder.com/100",
+        image: "https://via.placeholder.com/100x100",
         title: "Porciones por empaque",
         details: "por kilo",
       },
@@ -39,19 +39,19 @@ export default function Home() {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
     relatedProducts: [
       {
-        image: "https://via.placeholder.com/300",
+        image: "https://via.placeholder.com/300x300",
         title: "PIERNA DE CERDO",
         link: "/producto/pierna-de-cerdo",
         presentation: "Por kilo",
       },
       {
-        image: "https://via.placeholder.com/300",
+        image: "https://via.placeholder.com/300x300",
         title: "JAMÓN DE PIERNA YORK",
         link: "/producto/jamon-pierna-york",
         presentation: "200g",
       },
       {
-        image: "https://via.placeholder.com/300",
+        image: "https://via.placeholder.com/300x300",
         title: "pechuga de pavo",
         link: "/producto/jamon-pierna-york",
         presentation: "180g",
@@ -129,42 +129,42 @@ export default function Home() {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 4,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 5,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 3,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 2,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 1,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 0,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
       ],
       [
@@ -173,42 +173,42 @@ export default function Home() {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 4,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 5,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 3,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 2,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 1,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 0,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
       ],
       [
@@ -217,42 +217,42 @@ export default function Home() {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 4,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 5,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 3,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 2,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 1,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 0,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
       ],
       [
@@ -261,42 +261,42 @@ export default function Home() {
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 4,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 5,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 3,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 2,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 1,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
         {
           title: "Anna Cristina Peña",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
           score: 0,
-          image: "https://via.placeholder.com/150",
+          image: "https://via.placeholder.com/150x150",
         },
       ],
     ],
@@ -354,7 +354,11 @@ export default function Home() {
 
         <div className={styles.productsWrapper}>
           {productDetails.relatedProducts.map((product, index) => (
-            <div className={styles.product} key={index}>
+            <div
+              className={styles.product}
+              key={index}
+              onClick={() => (window.location.href = product.link)}
+            >
               <img src={product.image} alt={product.title} />
               <h4>{product.title}</h4>
               <p>{product.presentation}</p>

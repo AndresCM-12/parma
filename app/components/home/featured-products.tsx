@@ -6,15 +6,15 @@ import blackTrail from "../../../public/images/trail_black.svg";
 export default function FeaturedProducts() {
   const [products, setProducts] = React.useState([
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       link: "/productos/salchichas",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       link: "/productos/salchichas",
     },
     {
-      image: "https://via.placeholder.com/300",
+      image: "https://via.placeholder.com/300x300",
       link: "/productos/salchichas",
     },
   ]);
