@@ -108,7 +108,7 @@ export default function FeaturedReviews({ relatedReviews }: any) {
                   {getStars(review.score)}
                   <h6>{review.title}</h6>
                   <p>{review.description}</p>
-                  <a href="/comentarios">Ver más</a>
+                  <a href="/resenas">Ver más</a>
                 </div>
               </div>
             </SwiperSlide>
@@ -148,7 +148,7 @@ export default function FeaturedReviews({ relatedReviews }: any) {
                   {getStars(review.score)}
                   <h6>{review.title}</h6>
                   <p>{review.description}</p>
-                  <a href="/comentarios">Ver más</a>
+                  <a href="/resenas">Ver más</a>
                 </div>
               </div>
             </SwiperSlide>
