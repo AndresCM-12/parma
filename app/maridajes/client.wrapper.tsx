@@ -94,7 +94,7 @@ export default function MaridajeClientWrapper({ items }: any) {
               }}
             >
               {selectedCategory === "productos"
-                ? products.productos.map((product: any, index: number) => (
+                ? products.productos?.map((product: any, index: number) => (
                     <SwiperSlide
                       key={index}
                       style={{
