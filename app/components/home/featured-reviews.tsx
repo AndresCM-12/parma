@@ -8,53 +8,9 @@ import emptyStar from "../../../public/images/empty-star.svg";
 import fullStar from "../../../public/images/full-star.svg";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import { Review } from "@/app/utils/constants";
 
-export default function FeaturedReviews({ relatedReviews }: any) {
-  const [reviews, setReviews] = React.useState([
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 4,
-      image: "https://via.placeholder.com/150x150",
-    },
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 5,
-      image: "https://via.placeholder.com/150x150",
-    },
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 3,
-      image: "https://via.placeholder.com/150x150",
-    },
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 2,
-      image: "https://via.placeholder.com/150x150",
-    },
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 1,
-      image: "https://via.placeholder.com/150x150",
-    },
-    {
-      title: "Anna Cristina Peña",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-      score: 0,
-      image: "https://via.placeholder.com/150x150",
-    },
-  ]);
-
+export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
   return (
     <div className={styles.swiperWrapper}>
       <div
@@ -74,87 +30,45 @@ export default function FeaturedReviews({ relatedReviews }: any) {
         />
       </div>
 
-      {relatedReviews != null ? (
-        <Swiper
-          id="featured-reviews"
-          slidesPerView={1}
-          spaceBetween={30}
-          className={styles.swiperContainer}
-          loop={true}
-          style={{ width: "100%" }}
-          modules={[Autoplay]}
-          speed={600}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-        >
-          {relatedReviews.map((review: any, index: number) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: "20px",
-                maxWidth: "100%",
-              }}
-            >
-              <div className={styles.swiperSlide}>
-                <div className={styles.images}>
-                  <img src={review.image} alt="Imagen de usuario" />
-                </div>
-                <div className={styles.textWrapper}>
-                  {getStars(review.score)}
-                  <h6>{review.title}</h6>
-                  <p>{review.description}</p>
-                  <a href="/resenas">Ver más</a>
-                </div>
+      <Swiper
+        id="featured-reviews"
+        slidesPerView={1}
+        spaceBetween={30}
+        className={styles.swiperContainer}
+        loop={true}
+        style={{ width: "100%" }}
+        modules={[Autoplay]}
+        speed={600}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+      >
+        {reviews.map((review, index) => (
+          <SwiperSlide
+            key={index}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: "20px",
+              maxWidth: "100%",
+            }}
+          >
+            <div className={styles.swiperSlide}>
+              <div className={styles.images}>
+                <img src={review.image} alt="Imagen de usuario" />
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <Swiper
-          id="featured-reviews"
-          slidesPerView={1}
-          spaceBetween={30}
-          className={styles.swiperContainer}
-          loop={true}
-          style={{ width: "100%" }}
-          modules={[Autoplay]}
-          speed={600}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-        >
-          {reviews.map((review, index) => (
-            <SwiperSlide
-              key={index}
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: "20px",
-                maxWidth: "100%",
-              }}
-            >
-              <div className={styles.swiperSlide}>
-                <div className={styles.images}>
-                  <img src={review.image} alt="Imagen de usuario" />
-                </div>
-                <div className={styles.textWrapper}>
-                  {getStars(review.score)}
-                  <h6>{review.title}</h6>
-                  <p>{review.description}</p>
-                  <a href="/resenas">Ver más</a>
-                </div>
+              <div className={styles.textWrapper}>
+                {getStars(review.score)}
+                <h6>{review.title}</h6>
+                <p>{review.description}</p>
+                <a href="/resenas">Ver más</a>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       <div
         id="featured-reviews-right-arrow"

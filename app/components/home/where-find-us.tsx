@@ -1,36 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./where-find-us.module.css";
-import mercadoLibreIcon from "../../../public/images/mercadolibre-icon.svg";
+import { Store } from "@/app/utils/constants";
 
-export default function WhereFindUs() {
-  const [stores, setStores] = useState([
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-  ]);
-
+export default function WhereFindUs({ stores }: { stores: Store[] }) {
   return (
     <div className={styles.whereFindUs}>
       <h2>Dónde encontrarnos</h2>
@@ -46,7 +19,9 @@ export default function WhereFindUs() {
           </a>
         ))}
       </div>
-      <a className={styles.link} href="/donde-comprar">Encuentra tu tienda</a>
+      <a className={styles.link} href="/donde-comprar">
+        Encuentra tu tienda
+      </a>
     </div>
   );
 }

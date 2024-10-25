@@ -59,7 +59,10 @@ export default function CustomHeader() {
           <a href="/https://spotify.com">
             <img src={spotifyLogo.src} alt="logo de spotify" /> Nuestra Playlist
           </a>
-          <div className={styles.menuIcon} onClick={() => setMenuIsOpen(true)}>
+          <div
+            className={styles.menuIcon}
+            onClick={() => setMenuIsOpen(!menuIsOpen)}
+          >
             <img
               src={openMenuIcon.src}
               width={48}

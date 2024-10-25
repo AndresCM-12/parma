@@ -1,40 +1,15 @@
-"use client";
 import CustomHeader from "../components/header/custom-header";
 import styles from "./page.module.css";
 import CustomFooter from "../components/footer/custom-footer";
-import mercadoLibreIcon from "../../public/images/mercadolibre-icon.svg";
 import trailing from "../../public/images/trail_black.svg";
 
-import { useState } from "react";
+import ItemsWhereToBuy from "./components/items";
+import { fetchArrayInPost } from "../utils/methods";
+import { whereFindUs } from "../utils/constants";
 
-export default function Home() {
-  const [stores, setStores] = useState([
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-    {
-      link: "https://www.google.com/maps",
-      icon: mercadoLibreIcon.src,
-    },
-  ]);
-
+export default async function Home() {
+  const stores = await fetchArrayInPost(whereFindUs);
+  
   return (
     <>
       <CustomHeader />
@@ -43,23 +18,7 @@ export default function Home() {
           <h1>¿Donde comprar?</h1>
           <img src={trailing.src} alt="trailing" className={styles.trailing} />
         </div>
-        <section className={styles.storesWrapper}>
-          {stores.map((store, index) => (
-            <a
-              key={index}
-              href={store.link}
-              target="_blank"
-              rel="noreferrer"
-              className={styles.storeLink}
-            >
-              <img
-                src={store.icon}
-                alt="store-icon"
-                className={styles.storeIcon}
-              />
-            </a>
-          ))}
-        </section>
+        <ItemsWhereToBuy stores={stores} />
       </main>
       <CustomFooter />
     </>

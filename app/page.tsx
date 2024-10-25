@@ -9,8 +9,33 @@ import FeaturedBlog from "./components/home/featured-blog";
 import FeaturedRecipe from "./components/home/featured-recipe";
 import FeaturedProducts from "./components/home/featured-products";
 import FeaturedReviews from "./components/home/featured-reviews";
+import { fetchArrayInPost } from "@/app/utils/methods";
+import {
+  BlogItem,
+  FeaturedProductsInterface,
+  RecipeInterface,
+  Review,
+  Store,
+  featuredBlogs,
+  featuredProducts,
+  featuredRecipes,
+  featuredReviews,
+  whereFindUs,
+} from "./utils/constants";
 
-export default function Home() {
+export default async function Home() {
+  const products = (await fetchArrayInPost(
+    featuredProducts
+  )) as FeaturedProductsInterface[];
+
+  const recipes = (await fetchArrayInPost(
+    featuredRecipes
+  )) as RecipeInterface[];
+
+  const blogs = (await fetchArrayInPost(featuredBlogs)) as BlogItem[];
+  const stores = (await fetchArrayInPost(whereFindUs)) as Store[];
+  const reviews = (await fetchArrayInPost(featuredReviews)) as Review[];
+  
   return (
     <>
       <CustomHeader />
@@ -28,16 +53,16 @@ export default function Home() {
           </p>
           <a href="/marca">QUIENES SOMOS</a>
         </div>
-        <FeaturedProducts />
-        <FeaturedRecipe />
-        <FeaturedBlog />
-        <WhereFindUs />
+        <FeaturedProducts products={products} />
+        <FeaturedRecipe recipes={recipes} />
+        <FeaturedBlog blogItems={blogs} />
+        <WhereFindUs stores={stores} />
         <div className={styles.maridajeWrapper}>
           <img src={maridajeCover.src} alt="Cover de imagen de maridaje" />
           <h2>Descubre tu maridaje</h2>
           <a href="/maridaje">Conocer más</a>
         </div>
-        <FeaturedReviews />
+        <FeaturedReviews reviews={reviews} />
       </main>
       <CustomFooter />
     </>
