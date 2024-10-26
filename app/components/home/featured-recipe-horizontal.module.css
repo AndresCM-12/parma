@@ -66,6 +66,7 @@
   position: absolute;
   z-index: -1;
   filter: brightness(0.8);
+  object-fit: cover;
 }
 
 .slideWrapper .titleWrapper h3 {

@@ -15,6 +15,7 @@ export const foroProvokerFAQ = "foro-provoker-faq";
 export const foroProvokerUsers = "foro-provoker-users";
 export const maridajePage = "maridaje";
 export const reviewsPage = "resenas";
+export const blogsPage = "blog";
 
 export const getSectionsGraphqlQuery = (postName: string) => {
   return `
@@ -36,11 +37,30 @@ export const getSectionsGraphqlQuery = (postName: string) => {
     }
     `;
 };
-
 export const gePageInfo = (pageName: string) => {
   return `
     query get_page_by_name {
       categories(where: {name: "pages"}) {
+        edges {
+          node {
+            id
+            posts(where: {name: "${pageName}"}) {
+              edges {
+                node {
+                  content
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    `;
+};
+export const getDetailPageInfo = (pageName: string) => {
+  return `
+    query get_detail_page_by_name {
+      categories(where: {name: "detail-pages"}) {
         edges {
           node {
             id
