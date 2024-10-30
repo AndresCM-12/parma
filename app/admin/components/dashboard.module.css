@@ -1,0 +1,393 @@
+/* dashboard.module.css */
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #f1f5f9;
+}
+
+.sidebar {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
+}
+
+.sidebarOpen {
+  width: 16rem;
+}
+
+.sidebarClosed {
+  width: 5rem;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.toggleButton:hover {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+}
+
+.menuContainer {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menuItem:hover {
+  background-color: #f1f5f9;
+}
+
+.menuItemActive {
+  background-color: #e2e8f0;
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+}
+
+.menuText {
+  margin-left: 1rem;
+  color: #4b5563;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: #f1f5f9;
+}
+
+.bottomBar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+  .bottomBar {
+    display: block;
+  }
+}
+
+.bottomBarContent {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem;
+}
+
+.bottomBarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.bottomBarItem:hover {
+  background-color: #f1f5f9;
+  border-radius: 4px;
+}
+
+.bottomBarItemActive {
+  background-color: #e2e8f0;
+  border-radius: 4px;
+}
+
+.bottomBarIcon {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+}
+
+.bottomBarText {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  color: #4b5563;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 0px;
+  overflow: auto;
+}
+
+/* Home page css */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.header {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 16px;
+}
+
+.main {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  width: 100%;
+  margin: 0rem auto;
+  padding: 0 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardTitle {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  padding: 1.5rem;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+}
+
+.infoTitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.infoDescription {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.actionButton {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #444;
+}
+/* Home page css */
+
+/* Questions page css */
+.questionsWrapper {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+  padding-inline: 20px;
+}
+
+.successWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  width: 100%;
+  height: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.questionCard {
+  padding: 1.5rem;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.questionCard .textWrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.questionWrapper {
+  width: 100%;
+}
+
+.questionCard .buttonWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.questionCard .iconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.questionWrapper .questionAnswers {
+  width: 100%;
+}
+
+.questionWrapper .questionAnswers form {
+  width: 100%;
+  display: flex;
+  height: fit-content;
+  padding: 20px;
+  gap: 20px;
+}
+
+.questionWrapper .questionAnswers form input {
+  width: 100%;
+  border-radius: 6px;
+  padding-left: 12px;
+  border: 1px solid #ccc;
+}
+
+.questionWrapper .questionAnswers .wrapQuestions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+}
+
+.questionWrapper .questionAnswers .responseCard {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.questionWrapper .questionAnswers .responseCard p {
+  max-width: 95%;
+  font-size: 14px;
+}
+.questionWrapper .editUserQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.questionWrapper .editTextQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.questionWrapper .textWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.questionWrapper .textWrapper input {
+  width: 100%;
+  border-radius: 6px;
+  padding-left: 12px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.questionCard .editUserQuestion {
+  width: 100%;
+}
+
+@media screen and (max-width: 560px) {
+  .questionCard {
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .questionCard .textWrapper {
+    width: 100%;
+  }
+}
+/* Questions page css */
