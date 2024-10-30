@@ -161,6 +161,10 @@
   flex: 1;
   padding: 0px;
   overflow: auto;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding-block: 20px;
 }
 
 /* Home page css */
@@ -262,16 +266,18 @@
   display: grid;
   place-items: center;
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   padding-inline: 20px;
 }
 
 .successWrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 30px;
   max-width: 1300px;
   width: 100%;
-  height: 600px;
+  height: fit-content;
+  min-height: 600px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -295,6 +301,7 @@
 
 .questionWrapper {
   width: 100%;
+  height: fit-content;
 }
 
 .questionCard .buttonWrapper {

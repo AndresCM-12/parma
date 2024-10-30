@@ -217,6 +217,83 @@
   cursor: text;
 }
 
+.userQuestions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.userQuestions h6 {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+  color: #8c704c;
+  margin-bottom: 30px;
+}
+
+.usersQuestionsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.usersQuestionsWrapper h3 {
+  font-family: Gotham Light;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.usersQuestionsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #8c704c;
+}
+.usersQuestionsWrapper .contentWrapper {
+  width: 90%;
+}
+
+.usersQuestionsWrapper .icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 300;
+}
+.usersQuestionsWrapper .commentsWrapper {
+  padding-left: 24px;
+  padding-block: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.usersQuestionsWrapper .response h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c22e2e;
+}
+
+.usersQuestionsWrapper .response h6 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8c704c;
+}
+
 @media screen and (max-width: 493px) {
   .headerWrapper img {
     margin-right: 120px;

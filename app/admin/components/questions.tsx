@@ -11,7 +11,6 @@ import {
 import { app } from "../../firebase/config";
 import { OrbitProgress } from "react-loading-indicators";
 import {
-  CrossIcon,
   Edit2Icon,
   Eye,
   EyeClosed,
