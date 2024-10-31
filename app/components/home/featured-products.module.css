@@ -31,7 +31,7 @@
   object-fit: contain;
   z-index: 1;
   right: 60px !important;
-  bottom: 0px !important;
+  bottom: -8px !important;
 }
 
 .featuredProductWrapper .link {

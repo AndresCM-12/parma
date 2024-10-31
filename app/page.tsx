@@ -60,7 +60,7 @@ export default async function Home() {
         <div className={styles.maridajeWrapper}>
           <img src={maridajeCover.src} alt="Cover de imagen de maridaje" />
           <h2>Descubre tu maridaje</h2>
-          <a href="/maridaje">Conocer más</a>
+          <a href="/maridajes">Conocer más</a>
         </div>
         <FeaturedReviews reviews={reviews} />
       </main>

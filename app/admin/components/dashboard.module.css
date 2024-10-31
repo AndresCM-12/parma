@@ -366,6 +366,11 @@
   align-items: center;
   gap: 20px;
 }
+.questionWrapper span {
+  font-size: 10px;
+  padding-left: 4px;
+  color: #969696;
+}
 .questionWrapper .textWrapper {
   display: flex;
   justify-content: flex-start;
@@ -383,6 +388,22 @@
 
 .questionCard .editUserQuestion {
   width: 100%;
+}
+
+.filtersWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1300px;
+  padding-block: 20px;
+}
+
+.filtersWrapper select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 0px solid #ccc;
 }
 
 @media screen and (max-width: 560px) {

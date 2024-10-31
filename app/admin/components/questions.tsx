@@ -6,7 +6,10 @@ import {
   collection,
   doc,
   getFirestore,
+  orderBy,
+  query,
   updateDoc,
+  where,
 } from "firebase/firestore";
 import { app } from "../../firebase/config";
 import { OrbitProgress } from "react-loading-indicators";
@@ -24,7 +27,10 @@ export default function AdminQuestions() {
   const [questions, setQuestions] = useState([] as any);
 
   const [snapshot, loading, error] = useCollection(
-    collection(getFirestore(app), "user-questions")
+    query(
+      collection(getFirestore(app), "user-questions"),
+      orderBy("date", "desc")
+    )
   );
 
   useEffect(() => {
@@ -78,8 +84,6 @@ function LoadingView() {
 }
 
 function SuccessView({ questions }: { questions: any }) {
-  console.log("questions: ", questions);
-
   return (
     <div className={styles.questionsWrapper}>
       <div className={styles.successWrapper}>
@@ -195,7 +199,9 @@ function QuestionItem({ question }: { question: any }) {
             </div>
           ) : (
             <div className={styles.editTextQuestion}>
-              <p>{editText} </p>
+              <div className={styles.text}>
+                <p>{editText} </p>
+              </div>
               <Edit2Icon size={18} onClick={() => setShowEditText(true)} />
             </div>
           )}
@@ -210,6 +216,9 @@ function QuestionItem({ question }: { question: any }) {
           >
             <p>{question.responses.length}</p>
             <MessageSquareMore size={24} />
+            <span>
+              {new Date(question.date.seconds * 1000).toLocaleDateString()}
+            </span>
           </div>
         )}
       </div>

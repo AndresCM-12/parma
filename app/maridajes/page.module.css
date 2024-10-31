@@ -109,3 +109,22 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 875px) {
+  .bodyWrapper .buttons {
+    flex-direction: column;
+  }
+  .bodyWrapper .buttons h6 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .swiperWrapper {
+    padding-inline: 16px;
+    width: 100%;
+  }
+
+  .swiperWrapper .arrow {
+    display: none;
+  }
+}

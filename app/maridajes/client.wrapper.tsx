@@ -89,7 +89,7 @@ export default function MaridajeClientWrapper({ items }: any) {
               slidesPerView={"auto"}
               className={styles.swiper}
               style={{
-                maxWidth: "1064px",
+                maxWidth: "864px",
                 margin: "0 auto",
               }}
             >
@@ -99,9 +99,6 @@ export default function MaridajeClientWrapper({ items }: any) {
                       key={index}
                       style={{
                         width: "200px",
-                        height: "200px",
-                        cursor: "pointer",
-                        opacity: selectedItem === index ? 1 : 0.5,
                       }}
                       onClick={() => {
                         setSelectedProducts(product.drinks);
@@ -109,6 +106,12 @@ export default function MaridajeClientWrapper({ items }: any) {
                       }}
                     >
                       <img
+                        style={{
+                          width: "200px",
+                          height: "200px",
+                          cursor: "pointer",
+                          opacity: selectedItem === index ? 1 : 0.5,
+                        }}
                         src={product.image}
                         width={200}
                         height={200}

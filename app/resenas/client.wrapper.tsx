@@ -49,7 +49,7 @@ export default function ClientReviewsWrapper({ items }: any) {
               slidesPerView={"auto"}
               className={styles.swiper}
               style={{
-                maxWidth: "1064px",
+                maxWidth: "864px",
                 margin: "0 auto",
               }}
             >
@@ -58,9 +58,6 @@ export default function ClientReviewsWrapper({ items }: any) {
                   key={index}
                   style={{
                     width: "200px",
-                    height: "200px",
-                    cursor: "pointer",
-                    opacity: selectedItem === index ? 1 : 0.5,
                   }}
                   onClick={() => {
                     setSelectedItem(index);
@@ -68,6 +65,12 @@ export default function ClientReviewsWrapper({ items }: any) {
                 >
                   <img
                     src={product.image}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      cursor: "pointer",
+                      opacity: selectedItem === index ? 1 : 0.5,
+                    }}
                     width={200}
                     height={200}
                     alt="Imagen del producto"

@@ -18,8 +18,8 @@ import {
   FirestoreError,
   doc,
   query,
-  queryEqual,
   where,
+  orderBy,
 } from "firebase/firestore";
 import commentIcon from "../../public/images/comment-icon.svg";
 import Snackbar from "@mui/material/Snackbar";
@@ -43,7 +43,8 @@ export default function ForoProvokerClientWrapper({
   const [snapshot, loading, error] = useCollectionOnce(
     query(
       collection(getFirestore(app), "user-questions"),
-      where("visible", "==", true)
+      where("visible", "==", true),
+      orderBy("date", "desc")
     )
   );
 
