@@ -20,7 +20,6 @@ export default function MobileMenu({
   useLayoutEffect(() => {
     if (selectedPage === "") {
       const currentPage = window.location.pathname;
-      console.log(currentPage);
       setSelectedPage(currentPage);
     }
   }, []);

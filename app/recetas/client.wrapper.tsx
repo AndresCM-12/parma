@@ -20,7 +20,6 @@ export default function RecipesClientWrapper({ recipes }: any) {
       setSelectedStore(locationHash.replace("#", ""));
     }
 
-    console.log(locationHash);
   }, []);
 
   return (

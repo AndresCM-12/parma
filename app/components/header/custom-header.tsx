@@ -21,7 +21,6 @@ export default function CustomHeader() {
   useLayoutEffect(() => {
     if (selectedPage === "") {
       const currentPage = window.location.pathname;
-      console.log(currentPage);
       setSelectedPage(currentPage);
     }
   }, []);

@@ -4,7 +4,6 @@ import MarcaClientWrapper from "./client.wrapper";
 
 export default async function Marca() {
   const info = await fetchPageInfo(brandPage);
-  console.log("info:", info);
 
   return (
     <MarcaClientWrapper
