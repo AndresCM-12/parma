@@ -1,4 +1,4 @@
-export const URL = " https://wp.parma.mx/graphql";
+export const URL = "https://wp.parma.mx/graphql";
 
 //Sections
 export const featuredProducts = "featured-products";
