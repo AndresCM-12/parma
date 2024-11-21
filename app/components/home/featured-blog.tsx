@@ -13,7 +13,7 @@ export default function FeaturedBlog({ blogItems }: { blogItems: BlogItem[] }) {
               <h3>{blog.title}</h3>
               <p>{blog.body}</p>
               <a href={blog.ctaLink}>{blog.ctaText}</a>
-              <img src={blog.img} alt={blog.title} />
+              <img src={blog.img ?? blog.backgroundImage} alt={blog.title} />
             </div>
           ))}
         </div>

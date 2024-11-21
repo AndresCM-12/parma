@@ -16,10 +16,10 @@ import {
   RecipeInterface,
   Review,
   Store,
-  featuredBlogs,
+  blogsPage,
   featuredProducts,
-  featuredRecipes,
   featuredReviews,
+  recipesPage,
   whereFindUs,
 } from "./utils/constants";
 
@@ -28,14 +28,15 @@ export default async function Home() {
     featuredProducts
   )) as FeaturedProductsInterface[];
 
-  const recipes = (await fetchArrayInPost(
-    featuredRecipes
-  )) as RecipeInterface[];
-
-  const blogs = (await fetchArrayInPost(featuredBlogs)) as BlogItem[];
+  const recipes = (await fetchArrayInPost(recipesPage))
+    .flatMap((items: any) => items.blogs)
+    .filter((item: any) => item.showInHome == true) as RecipeInterface[];
+  const blogs = (await fetchArrayInPost(blogsPage))
+    .flatMap((items: any) => items.blogs)
+    .filter((item: any) => item.showInHome == true) as BlogItem[];
   const stores = (await fetchArrayInPost(whereFindUs)) as Store[];
   const reviews = (await fetchArrayInPost(featuredReviews)) as Review[];
-  
+
   return (
     <>
       <CustomHeader />

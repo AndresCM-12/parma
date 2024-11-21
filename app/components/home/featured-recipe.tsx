@@ -92,7 +92,10 @@ export default function FeaturedRecipe({
               <div className={styles.descriptionWrapper}>
                 <p>{item.description}</p>
               </div>
-              <img src={item.image} alt="Imagen de producto" />
+              <img
+                src={item.image ?? item.backgroundImage}
+                alt="Imagen de producto"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

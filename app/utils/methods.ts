@@ -8,6 +8,9 @@ export async function fetchArrayInPost(postName: string) {
       headers: {
         "Content-Type": "application/json",
       },
+      next: {
+        revalidate: 3600,
+      },
       body: JSON.stringify({
         query: getSectionsGraphqlQuery(postName),
       }),
@@ -35,6 +38,9 @@ export async function fetchPageInfo(pageName: string) {
       headers: {
         "Content-Type": "application/json",
       },
+      next: {
+        revalidate: 3600,
+      },
       body: JSON.stringify({
         query: gePageInfo(pageName),
       }),
@@ -61,6 +67,9 @@ export async function fetchPageDetailInfo(pageName: string) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+      },
+      next: {
+        revalidate: 3600,
       },
       body: JSON.stringify({
         query: gePageInfo(pageName),

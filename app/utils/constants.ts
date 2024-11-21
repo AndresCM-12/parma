@@ -84,6 +84,7 @@ export interface FeaturedProductsInterface {
 }
 
 export interface RecipeInterface {
+  backgroundImage: string;
   link: string;
   image: string;
   dificulty: number;
@@ -93,6 +94,7 @@ export interface RecipeInterface {
 }
 
 export interface BlogItem {
+  backgroundImage: string;
   title: string;
   body: string;
   ctaLink: string;
