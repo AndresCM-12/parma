@@ -31,7 +31,7 @@ export default function CustomFooter() {
       </div>
       <div className={styles.rightWrapper}>
         <div className={styles.iconWrappers}>
-          <a href="http://facebook.com">
+          <a href="https://www.facebook.com/PARMAMexico" target="_blank">
             <img
               src={facebookIcon.src}
               alt="Ícono de facebook"
@@ -39,7 +39,7 @@ export default function CustomFooter() {
               height={20}
             />
           </a>
-          <a href="http://facebook.com">
+          <a href="https://www.instagram.com/parmamexico" target="_blank">
             <img
               src={instagramIcon.src}
               alt="Ícono de instagram"
@@ -47,7 +47,10 @@ export default function CustomFooter() {
               height={20}
             />
           </a>
-          <a href="http://facebook.com">
+          <a
+            href="https://www.youtube.com/channel/UC5eZukx47tz-1QJg_HrZ_KQ"
+            target="_blank"
+          >
             <img
               src={youtubeIcon.src}
               alt="Ícono de youtube"
@@ -55,7 +58,10 @@ export default function CustomFooter() {
               height={20}
             />
           </a>
-          <a href="http://facebook.com">
+          <a
+            href="https://open.spotify.com/user/31io5d5xvnxvnbbdvkjvnt67y4ea?si=zjDaTErcTr2VKRSzouDZpw"
+            target="_blank"
+          >
             <img
               src={spotifyIcon.src}
               alt="Ícono de spotify"

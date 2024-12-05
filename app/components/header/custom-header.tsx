@@ -55,7 +55,10 @@ export default function CustomHeader() {
         </div>
         <div className={styles.rightContainer}>
           <a href="/maridajes">Maridajes</a>
-          <a href="/https://spotify.com">
+          <a
+            href="https://open.spotify.com/user/31io5d5xvnxvnbbdvkjvnt67y4ea?si=zjDaTErcTr2VKRSzouDZpw"
+            target="_blank"
+          >
             <img src={spotifyLogo.src} alt="logo de spotify" /> Nuestra Playlist
           </a>
           <div
