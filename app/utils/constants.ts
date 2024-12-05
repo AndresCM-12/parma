@@ -6,6 +6,7 @@ export const featuredRecipes = "featured-recipes";
 export const featuredBlogs = "featured-blogs";
 export const whereFindUs = "where-find-us";
 export const featuredReviews = "featured-reviews";
+export const homePage = "home-featured";
 
 //Pages
 export const brandPage = "marca";

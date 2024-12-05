@@ -124,7 +124,10 @@ export default function Home() {
               <div
                 className={styles.product}
                 key={index}
-                onClick={() => (window.location.href = product.link)}
+                onClick={() =>
+                  (window.location.href =
+                    window.location.pathname + "/" + product.link.split("/")[2])
+                }
               >
                 <img src={product.image} alt={product.title} />
                 <h4>{product.title}</h4>

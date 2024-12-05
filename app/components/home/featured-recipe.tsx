@@ -46,6 +46,9 @@ export default function FeaturedRecipe({
           {recipes.map((item, index) => (
             <SwiperSlide
               className={styles.slideWrapper}
+              onClick={() => {
+                window.location.href = item.link;
+              }}
               style={{
                 width: "90%",
                 maxWidth: "400px",

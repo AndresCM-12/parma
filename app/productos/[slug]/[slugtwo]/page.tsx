@@ -1,14 +1,14 @@
 "use client";
 
 import styles from "./page.module.css";
-import CustomFooter from "../../components/footer/custom-footer";
-import CustomHeader from "../../components/header/custom-header";
-import parmaLogo from "../../../public/images/white-logo.webp";
-import filledStar from "../../../public/images/full-star-white.svg";
-import emptyStar from "../../../public/images/empty-star-white.svg";
-import FeaturedRecipe from "../../components/home/featured-recipe";
-import FeaturedReviews from "../../components/home/featured-reviews";
-import redBullet from "../../../public/images/red-bullet.svg";
+import CustomFooter from "../../../components/footer/custom-footer";
+import CustomHeader from "../../../components/header/custom-header";
+import parmaLogo from "../../../../public/images/white-logo.webp";
+import filledStar from "../../../../public/images/full-star-white.svg";
+import emptyStar from "../../../../public/images/empty-star-white.svg";
+import FeaturedRecipe from "../../../components/home/featured-recipe";
+import FeaturedReviews from "../../../components/home/featured-reviews";
+import redBullet from "../../../../public/images/red-bullet.svg";
 
 import { useEffect, useState } from "react";
 import "swiper/css";
@@ -18,7 +18,7 @@ import { fetchPageDetailInfo } from "@/app/utils/methods";
 
 export default function Home() {
   useEffect(() => {
-    const path = window.location.pathname.split("/")[2];
+    const path = window.location.pathname.split("/")[3];
     const getProductsInfo = async () => {
       const response = await fetchPageDetailInfo(path);
       setProductDetails(response);
