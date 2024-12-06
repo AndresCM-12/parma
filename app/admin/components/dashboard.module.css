@@ -350,6 +350,12 @@
   display: flex;
   justify-content: space-between;
 }
+.questionWrapper .questionAnswers .responseCard .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
 .questionWrapper .questionAnswers .responseCard p {
   max-width: 95%;
   font-size: 14px;

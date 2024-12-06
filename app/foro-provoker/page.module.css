@@ -212,6 +212,18 @@
   resize: none;
 }
 
+.createQuestionWrapper input {
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  border: none;
+  border-radius: 0px;
+  background: #9d9b9b66;
+  color: rgba(0, 0, 0, 0.46);
+  resize: none;
+  margin-bottom: 12px;
+}
+
 .createQuestionWrapper textarea:focus {
   outline: #8c704c solid 1px;
   cursor: text;
@@ -242,7 +254,6 @@
   justify-content: center;
   gap: 20px;
   width: 100%;
-  margin-bottom: 40px;
 }
 
 .usersQuestionsWrapper h3 {
@@ -258,7 +269,6 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
-  border-bottom: 1px solid #8c704c;
 }
 .usersQuestionsWrapper .contentWrapper {
   width: 90%;
@@ -287,13 +297,66 @@
   font-weight: 600;
   color: #c22e2e;
 }
+.usersQuestionsWrapper .response {
+  display: flex;
+  gap: 8px;
+}
 
 .usersQuestionsWrapper .response h6 {
   font-size: 12px;
   font-weight: 600;
   color: #8c704c;
+  text-transform: lowercase;
+}
+.userQuestions .responseWrapper {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #8c704c;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.userQuestions input {
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+  border: none;
+  border-radius: 0px;
+  background: #9d9b9b66;
+  color: rgba(0, 0, 0, 0.46);
+  resize: none;
+}
+.userQuestions input:focus {
+  outline: none;
+  cursor: text;
+}
+.userQuestions button {
+  width: 100%;
+  max-width: 138px;
+  height: 38px;
+  background-color: #8c704c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  justify-self: flex-end;
 }
 
+@media screen and (max-width: 550px) {
+  .userQuestions .responseWrapper {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #8c704c;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+  }
+}
 @media screen and (max-width: 493px) {
   .headerWrapper img {
     margin-right: 120px;

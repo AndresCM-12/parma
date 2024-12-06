@@ -55,14 +55,22 @@
   text-align: left;
   color: white;
 }
+.headerWrapper .rightContainer ol {
+  color: white;
+  padding-left: 16px;
+}
+.headerWrapper .rightContainer ul {
+  color: white;
+  padding-left: 16px;
+}
 .headerWrapper .rightContainer p {
   font-size: 14px;
   font-weight: 400;
-  line-height: 14.87px;
+  line-height: 14px;
   text-align: left;
   color: white;
   max-width: 320px;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .difficultyWrapper {

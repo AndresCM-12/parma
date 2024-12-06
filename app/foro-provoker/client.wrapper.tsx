@@ -11,6 +11,7 @@ import rightArrow from "../../public/images/long-right-arrow.svg";
 import bottomArrow from "../../public/images/white-bottom-arrow.svg";
 import { useCollectionOnce } from "react-firebase-hooks/firestore";
 import { app } from "../firebase/config";
+import parmaLogo from "../../public/images/black-logo.webp";
 import {
   collection,
   getFirestore,
@@ -20,6 +21,7 @@ import {
   query,
   where,
   orderBy,
+  updateDoc,
 } from "firebase/firestore";
 import commentIcon from "../../public/images/comment-icon.svg";
 import Snackbar from "@mui/material/Snackbar";
@@ -63,7 +65,7 @@ export default function ForoProvokerClientWrapper({
 
     if (status === "loading" && snapshot != undefined) {
       snapshot.docs.forEach((doc) => {
-        setQuestions((prev: any) => [...prev, { ...doc.data() }]);
+        setQuestions((prev: any) => [...prev, { ...doc.data(), id: doc.id }]);
       });
       setStatus("succsess");
     }
@@ -74,17 +76,36 @@ export default function ForoProvokerClientWrapper({
     vertical: "bottom",
     horizontal: "right",
   });
+  const [wrongSnack, setWrongSnack] = useState({
+    wrongSnackOpen: false,
+    wrongSnackVertical: "bottom",
+    wrongSnackHorizontal: "right",
+  });
 
   const [userQuestions, setUserQuestions] = useState("");
+  const [userName, setUserName] = useState("");
 
   const { vertical, horizontal, open } = state;
+  const { wrongSnackVertical, wrongSnackHorizontal, wrongSnackOpen } =
+    wrongSnack;
 
   const handleClose = () => {
     setState({ ...state, open: false });
+    setWrongSnack({ ...wrongSnack, wrongSnackOpen: false });
   };
 
   const handleCreateQuestion = async (event: any) => {
-    if (userQuestions === "" || userQuestions === " ") {
+    if (
+      userQuestions === "" ||
+      userQuestions === " " ||
+      userName === "" ||
+      userName === " "
+    ) {
+      setWrongSnack({
+        wrongSnackOpen: true,
+        wrongSnackVertical: "bottom",
+        wrongSnackHorizontal: "right",
+      });
       return;
     }
 
@@ -94,12 +115,14 @@ export default function ForoProvokerClientWrapper({
 
       await setDoc(docRef, {
         question: userQuestions,
+        userName: userName,
         responses: [],
         date: new Date(),
         visible: false,
       });
 
       setUserQuestions("");
+      setUserName("");
       setState({
         open: true,
         vertical: "bottom",
@@ -120,6 +143,14 @@ export default function ForoProvokerClientWrapper({
         open={open}
         onClose={handleClose}
         message="Tu comentario fue enviado con éxito, espera a que un administrador lo apruebe"
+        key={vertical + horizontal}
+      />
+      <Snackbar
+        autoHideDuration={10000}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={wrongSnackOpen}
+        onClose={handleClose}
+        message="Por favor, llena todos los campos para enviar tu pregunta"
         key={vertical + horizontal}
       />
 
@@ -168,6 +199,13 @@ export default function ForoProvokerClientWrapper({
 
           <div className={styles.createQuestionWrapper}>
             <h6>PREGUNTAR</h6>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre"
+              value={userName}
+              onChange={(event) => setUserName(event.target.value)}
+            />
             <textarea
               name="question"
               id="question"
@@ -183,24 +221,7 @@ export default function ForoProvokerClientWrapper({
           <div className={styles.userQuestions}>
             <h6>ÚLTIMAS REALIZADAS</h6>
             {questions.map((question: any, index: number) => (
-              <div key={index} className={styles.usersQuestionsWrapper}>
-                <div className={styles.contentWrapper}>
-                  <h3>{question.question}</h3>
-                  <div className={styles.commentsWrapper}>
-                    {question.responses.map((response: any, index: number) => (
-                      <div className={styles.response} key={index}>
-                        <h5>Respuesta:</h5>
-                        <p key={index}>{response}</p>
-                        <h6>@adminparma</h6>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className={styles.icons}>
-                  <img src={commentIcon.src} alt="Buscar" />
-                  <p>{question.responses.length}</p>
-                </div>
-              </div>
+              <UserQuestion question={question} index={index} />
             ))}
           </div>
         </div>
@@ -252,6 +273,109 @@ function Comment({
         {question?.response.map((comment, index) => (
           <p key={index}>{comment}</p>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function UserQuestion({ question, index }: any) {
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [responseText, setResponseText] = useState("");
+  const [nameText, setnameText] = useState("");
+
+  return (
+    <div
+      style={{
+        width: "100%",
+      }}
+      key={index}
+    >
+      <div className={styles.usersQuestionsWrapper}>
+        <div className={styles.contentWrapper}>
+          <h3>{question.question}</h3>
+          <div className={styles.commentsWrapper}>
+            {question.responses
+              .filter((responseObject: any) => responseObject.visible == true)
+              .map((responseObject: any, index: number) => (
+                <div className={styles.response} key={index}>
+                  {responseObject.user == "adminparma" && (
+                    <img
+                      src={parmaLogo.src}
+                      style={{
+                        width: 50,
+                        height: 50,
+                        borderRadius: "50%",
+                        objectFit: "contain",
+                        backgroundColor: "white",
+                      }}
+                      alt=""
+                    />
+                  )}
+                  <div>
+                    <h5>Respuesta:</h5>
+                    <p key={index}>{responseObject.response}</p>
+                    <h6>@{responseObject.user}</h6>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className={styles.icons}>
+          <img src={commentIcon.src} alt="Buscar" />
+          <p>{question.responses.length}</p>
+        </div>
+      </div>
+
+      <div className={styles.responseWrapper}>
+        <input
+          value={nameText}
+          onChange={(event) => {
+            setnameText(event.target.value);
+          }}
+          type="text"
+          name="name"
+          placeholder="Nombre"
+        />
+        <input
+          value={responseText}
+          onChange={(event) => {
+            setResponseText(event.target.value);
+          }}
+          type="text"
+          name="answer"
+          placeholder="Escribe tu respuesta aquí"
+        />
+        <button
+          onClick={async () => {
+            if (
+              responseText === "" ||
+              nameText === "" ||
+              responseText === " " ||
+              nameText === " "
+            ) {
+              return;
+            }
+
+            question.responses.push({
+              user: nameText,
+              response: responseText,
+              visible: false,
+            });
+
+            const ref = doc(getFirestore(app), "user-questions", question.id);
+            try {
+              await updateDoc(ref, {
+                responses: question.responses,
+              });
+
+              setResponseText("");
+            } catch (error) {
+              console.error("Error al enviar respuesta", error);
+            }
+          }}
+        >
+          ENVIAR
+        </button>
       </div>
     </div>
   );

@@ -34,9 +34,14 @@ export default function MaridajeClientWrapper({ items }: any) {
         <div className={styles.headerWrapper}>
           <h1>Descubre tu maridaje</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis.
+            Marida como un experto: Explora cómo complementar los sabores únicos
+            de nuestros productos Parma con bebidas que realzan cada bocado.
+            Desde cervezas artesanales que equilibran texturas intensas, vinos
+            que armonizan con nuestros madurados y mocktails que añaden frescura
+            a tus platillos. Cada maridaje está cuidadosamente pensado para
+            resaltar los sabores y ofrecer una experiencia sensorial
+            equilibrada. ¡Haz que cada comida sea inolvidable con el maridaje
+            perfecto!
           </p>
           <img src={maridajeCover.src} alt="Maridaje imágen de cover" />
         </div>

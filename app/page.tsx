@@ -46,7 +46,7 @@ export default async function Home() {
         <HomeHeader homeInfo={homeInfo.header} />
         <FeaturedProducts products={products} />
         <FeaturedRecipe recipes={recipes} />
-        <FeaturedBlog blogItems={blogs} />
+        {/* <FeaturedBlog blogItems={blogs} /> */}
         <WhereFindUs stores={stores} />
         <HomeFooter homeInfo={homeInfo.footer} />
         <FeaturedReviews reviews={reviews} />

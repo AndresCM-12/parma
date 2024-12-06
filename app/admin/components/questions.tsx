@@ -117,7 +117,7 @@ function QuestionItem({ question }: { question: any }) {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    responses.push(responseText);
+    responses.push({ user: "adminparma", response: responseText });
 
     const ref = doc(getFirestore(app), "user-questions", question.id);
     try {
@@ -147,6 +147,14 @@ function QuestionItem({ question }: { question: any }) {
     });
 
     setIsAnswerVisible(!isAnswerVisible);
+  };
+
+  const hanldeResponseVisibility = async (responseIndex: number) => {
+    const ref = doc(getFirestore(app), "user-questions", question.id);
+    responses[responseIndex].visible = !responses[responseIndex].visible;
+    await updateDoc(ref, {
+      responses: responses,
+    });
   };
 
   const handleEditQuestion = async (event: any) => {
@@ -239,9 +247,28 @@ function QuestionItem({ question }: { question: any }) {
             </button>
           </form>
           <div className={styles.wrapQuestions}>
-            {responses.map((text: any, index: number) => (
+            {responses.map((response: any, index: number) => (
               <div key={index} className={styles.responseCard}>
-                <p>{text}</p>
+                <div className={styles.iconWrapper}>
+                  {response.visible ? (
+                    <Eye
+                      size={24}
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      onClick={() => hanldeResponseVisibility(index)}
+                    />
+                  ) : (
+                    <EyeClosed
+                      size={24}
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      onClick={() => hanldeResponseVisibility(index)}
+                    />
+                  )}
+                  <p>{response.response}</p>
+                </div>
                 <Trash2
                   style={{
                     cursor: "pointer",

@@ -121,7 +121,7 @@ export default function MarcaClientWrapper({
           ))}
         </div>
 
-        <div className={styles.valuesWrapper}>
+        {/* <div className={styles.valuesWrapper}>
           <h5>NUESTROS VALORES</h5>
           <div className={styles.values}>
             {values?.map((item: any, index: number) => (
@@ -132,10 +132,14 @@ export default function MarcaClientWrapper({
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.processWrapper}>
-          <h5>PROCESOS</h5>
+          <h5 style={
+            {
+              marginTop: "80px"
+            }
+          }>PROCESOS</h5>
 
           <div className={styles.swiperWrapper}>
             <Swiper

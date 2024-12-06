@@ -26,7 +26,8 @@ export default function ClientWrapperRecipe() {
     difficulty: number;
     time: string;
     title: string;
-    descriptions: string[];
+    instructions: string[];
+    ingredients: string[];
     video: string;
   }
 
@@ -51,10 +52,28 @@ export default function ClientWrapperRecipe() {
               </h1>
             </div>
             <div className={styles.rightContainer}>
-              <h2>{productDetail?.title}</h2>
-              {productDetail?.descriptions?.map((description, index) => (
-                <p key={index}>{description}</p>
-              ))}
+              <h2>INGREDIENTES:</h2>
+              <ul>
+                {productDetail?.ingredients?.map((description, index) => (
+                  <li>
+                    <p key={index}>{description}</p>
+                  </li>
+                ))}
+              </ul>
+              <h2
+                style={{
+                  marginTop: "28px",
+                }}
+              >
+                PROCEDIMIENTOS:
+              </h2>
+              <ol>
+                {productDetail?.instructions?.map((description, index) => (
+                  <li>
+                    <p key={index}>{description}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
           </section>
 

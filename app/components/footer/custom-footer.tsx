@@ -20,13 +20,23 @@ export default function CustomFooter() {
           />
         </a>
         <div className={styles.textWrapper}>
-          <a href="blog">Nuestro Blog</a>
+          {/* <a href="blog">Nuestro Blog</a> */}
           <a href="/donde-comprar">¿Dónde comprar?</a>
+          <a href="/recetas">Recetas</a>
+          <a href="/productos">Productos</a>
+          <a href="/foro-provoker">Foro Provoker</a>
           <a href="/contacto">Contacto</a>
-          <div className={styles.terms}>
+          <a href="/maridajes">Maridajes</a>
+          <a
+            href="https://open.spotify.com/user/31io5d5xvnxvnbbdvkjvnt67y4ea?si=zjDaTErcTr2VKRSzouDZpw&nd=1&dlsi=7fe5bb94b1d34244"
+            target="_blank"
+          >
+            Nuestra Playlist
+          </a>
+          {/* <div className={styles.terms}>
             <a href="terminos-y-condiciones">Términos y condiciones</a> |{" "}
             <a href="aviso-de-privacidad">Aviso de privacidad</a>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={styles.rightWrapper}>
@@ -70,12 +80,20 @@ export default function CustomFooter() {
             />
           </a>
         </div>
-        <p className={styles.title}>ÚNETE A NUESTRO NEWSLETTER</p>
+        <p className={styles.title}>Únete a nuestro club Provoker</p>
+        <span style={{
+          maxWidth: "300px",
+          fontSize: "12px",
+          marginBottom: "8px",
+          display: "block",
+        }}>
+          Sé el primero en descubrir sabores únicos, recetas, inspiración y más.
+        </span>
         <form action="POST">
           <input type="email" placeholder="Correo electrónico" />
           <button type="submit">Suscríbete</button>
         </form>
-        <div className={styles.clientService}>
+        {/* <div className={styles.clientService}>
           <p
             style={{
               fontWeight: "600",
@@ -84,7 +102,7 @@ export default function CustomFooter() {
             Atención al cliente:
           </p>
           <a href="mailto:info@parma.mx">info@parma.mx</a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
