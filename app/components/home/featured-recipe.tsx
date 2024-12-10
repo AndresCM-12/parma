@@ -93,6 +93,7 @@ export default function FeaturedRecipe({
                 </div>
               </div>
               <div className={styles.descriptionWrapper}>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
               <img

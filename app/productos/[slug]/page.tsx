@@ -30,6 +30,7 @@ export default function Home() {
   interface ProductDetailsInterface {
     title: string;
     image: string;
+    secondImage: string;
     rate: number;
     description: string;
     physicalStores: {
@@ -108,7 +109,12 @@ export default function Home() {
                 }}
               ></div>
               <p className={styles.separatorText}>EN LÍNEA: </p>
-              <div className={styles.logoWrapper}>
+              <div
+                className={styles.logoWrapper}
+                style={{
+                  marginBottom: "20px",
+                }}
+              >
                 {productDetails.onlineStores?.map((store, index) => (
                   <a key={index} href={store.link}>
                     <img src={store.icon} alt="store" />
@@ -125,7 +131,7 @@ export default function Home() {
 
           <div className={styles.productDetailWrapper}>
             <img
-              src={productDetails.image}
+              src={productDetails.secondImage}
               className={styles.image}
               alt={productDetails.title}
             />

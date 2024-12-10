@@ -90,27 +90,33 @@ export default function Home() {
                 />
               </div>
 
-              <p>
-                <span>Descripción del producto: </span>
-                {productDetails.description}
-              </p>
+              {productDetails.description && (
+                <p>
+                  <span>Descripción del producto: </span>
+                  {productDetails.description}
+                </p>
+              )}
 
-              <div className={styles.detailsWrapper}>
-                {productDetails.details.map((detail, index) => (
-                  <div className={styles.detail} key={index}>
-                    <img src={detail.image} alt="ícono del dealle" />
-                    <p>
-                      <span>{detail.title}: </span>
-                      {detail.details}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {productDetails.details && (
+                <div className={styles.detailsWrapper}>
+                  {productDetails.details.map((detail, index) => (
+                    <div className={styles.detail} key={index}>
+                      <img src={detail.image} alt="ícono del dealle" />
+                      <p>
+                        <span>{detail.title}: </span>
+                        {detail.details}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-              <p>
-                <span>Historia: </span>
-                {productDetails.history}
-              </p>
+              {productDetails.history && (
+                <p>
+                  <span>Historia: </span>
+                  {productDetails.history}
+                </p>
+              )}
             </div>
           </div>
 

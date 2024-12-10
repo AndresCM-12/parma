@@ -1,7 +1,7 @@
 "use client";
 import { useLayoutEffect, useState } from "react";
 import styles from "./header.module.css";
-import blackLogo from "../../../public/images/black-logo.webp";
+import blackLogo from "../../../public/images/header-logo.svg";
 import linkTrailWhite from "../../../public/images/trail_white.svg";
 import spotifyLogo from "../../../public/images/spotify-logo.svg";
 import openMenuIcon from "../../../public/images/open-menu.svg";
@@ -33,7 +33,7 @@ export default function CustomHeader() {
             className={styles.logo}
             onClick={() => (window.location.href = "/")}
             src={blackLogo.src}
-            width={164}
+            width={100}
             height={60}
             alt="Logotipo de parma"
             style={{ cursor: "pointer" }}

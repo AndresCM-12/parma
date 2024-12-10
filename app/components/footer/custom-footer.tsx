@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer.module.css";
-import colorLogo from "../../../public/images/color-logo.webp";
+import colorLogo from "../../../public/images/footer-logo.svg";
 
 import facebookIcon from "../../../public/social-icons/facebook-icon.svg";
 import instagramIcon from "../../../public/social-icons/instagram-icon.svg";
@@ -14,8 +14,8 @@ export default function CustomFooter() {
         <a href="/">
           <img
             src={colorLogo.src}
-            width={128}
-            height={44}
+            width={130}
+            height={60}
             alt="Parma Logotipo"
           />
         </a>

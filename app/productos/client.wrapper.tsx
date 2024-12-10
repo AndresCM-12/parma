@@ -5,6 +5,7 @@ import productsCover from "../../public/images/products-cover.png";
 import trailing from "../../public/images/trail_white.svg";
 import longRightArrow from "../../public/images/long-right-arrow.svg";
 import { useState } from "react";
+import CustomFooter from "../components/footer/custom-footer";
 
 export default function ClientProductsWrapper({ items }: any) {
   const [products, setProducts] = useState(items);
@@ -20,13 +21,18 @@ export default function ClientProductsWrapper({ items }: any) {
             alt="Imagen de fondo"
           />
           <div className={styles.titleWrapper}>
-            <h1>Productos</h1>
+            <h1>Descubre la excelencia detrás de cada producto Parma</h1>
             <img src={trailing.src} alt="Logo de parma" />
           </div>
           <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis.
+            Una selección única de madurados y delicatessen que elevan cualquier
+            experiencia culinaria. Desde jamones, hasta chorizos y quesos de
+            calidad superior, nuestros productos son creados para inspirar a los
+            amantes de la gastronomía a explorar sabores auténticos y texturas
+            inigualables. Perfectos para deleitar tus sentidos, transformar tus
+            recetas y compartir momentos inolvidables.
+            <br />
+            ¡Explora nuestra gama y lleva lo mejor de Parma a tu mesa!
           </p>
         </div>
 
@@ -56,6 +62,7 @@ export default function ClientProductsWrapper({ items }: any) {
           ))}
         </div>
       </main>
+      <CustomFooter />
     </>
   );
 }
