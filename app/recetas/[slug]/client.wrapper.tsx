@@ -77,13 +77,15 @@ export default function ClientWrapperRecipe() {
             </div>
           </section>
 
-          <section className={styles.videoWrapper}>
-            <iframe
-              src={productDetail?.video}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-          </section>
+          {productDetail?.video && (
+            <section className={styles.videoWrapper}>
+              <iframe
+                src={productDetail?.video}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </section>
+          )}
           <FeaturedRecipeHorizontal recipes={items} />
         </main>
       ) : (
