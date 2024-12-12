@@ -13,11 +13,11 @@ import parmaLogo from "../../public/images/black-logo.webp";
 import { Autoplay, Pagination } from "swiper/modules";
 import leftArrow from "../../public/images/left-arrow-red.svg";
 import rightArrow from "../../public/images/right-arrow-red.svg";
+import kraftBg from "../../public/images/kraft.webp";
 
 export default function MarcaClientWrapper({
   timeLine,
   information,
-  values,
   process,
 }: any) {
   return (
@@ -32,7 +32,12 @@ export default function MarcaClientWrapper({
           />
 
           <div className={styles.titleWrapper}>
-            <div className={styles.text}>
+            <div className={styles.text} style={{
+              backgroundImage: `url(${kraftBg.src})`,
+              backgroundSize: "cover",
+              borderTopLeftRadius: "46px",
+              borderBottomLeftRadius: "46px",
+            }}>
               <h1>QUIENES SOMOS</h1>
               <p>
                 Somos la marca de Grupo Bafar especializada en Madurados y
@@ -141,7 +146,10 @@ export default function MarcaClientWrapper({
             }
           }>PROCESOS</h5>
 
-          <div className={styles.swiperWrapper}>
+          <div className={styles.swiperWrapper} style={{
+            backgroundImage: `url(${kraftBg.src})`,
+            backgroundSize: "cover",
+          }}>
             <Swiper
               id="us-process"
               slidesPerView={"auto"}

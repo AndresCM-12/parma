@@ -13,6 +13,7 @@ export const brandPage = "marca";
 export const recipesPage = "recetas";
 export const productsPage = "productos";
 export const foroProvokerFAQ = "foro-provoker-faq";
+export const foroInfo = "foro-provoker-faq-info";
 export const foroProvokerUsers = "foro-provoker-users";
 export const maridajePage = "maridaje";
 export const reviewsPage = "resenas";

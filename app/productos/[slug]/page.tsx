@@ -9,7 +9,7 @@ import emptyStar from "../../../public/images/empty-star-white.svg";
 import FeaturedRecipe from "../../components/home/featured-recipe";
 import FeaturedReviews from "../../components/home/featured-reviews";
 import redBullet from "../../../public/images/red-bullet.svg";
-
+import kraftBg from "../../../public/images/kraft.webp";
 import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -123,7 +123,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles.creationWrapper}>
+            <div
+              className={styles.creationWrapper}
+              style={{
+                backgroundImage: `url(${kraftBg.src})`,
+                backgroundSize: "cover",
+              }}
+            >
               <h2>CREACIÓN</h2>
               <p>{productDetails.creation}</p>
             </div>
@@ -146,8 +152,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.presentationWrapper}>
-            <h3>PRESENTACIONES</h3>
+          <div className={styles.presentationWrapper} >
+            <h3 style={{
+            backgroundImage: `url(${kraftBg.src})`,
+            backgroundSize: "cover",
+          }}>PRESENTACIONES</h3>
             <div className={styles.presentationItems}>
               {productDetails.presentations?.map((presentation, index) => (
                 <a

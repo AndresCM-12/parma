@@ -33,6 +33,10 @@ a {
   background: #ffffff !important;
 }
 
+.swiper-pagination{
+  bottom: 0px !important;
+}
+
 @media screen and (max-width: 745px) {
   #featured-reviews-left-arrow,
   #featured-reviews-right-arrow {

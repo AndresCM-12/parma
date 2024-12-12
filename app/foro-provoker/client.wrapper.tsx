@@ -28,8 +28,10 @@ import Snackbar from "@mui/material/Snackbar";
 
 export default function ForoProvokerClientWrapper({
   faqQuestions,
+  faqInfoData,
 }: {
   faqQuestions: any;
+  faqInfoData: any;
 }) {
   const [filtredQuestions, setFiltredQuestions] = useState(null as any);
 
@@ -156,12 +158,10 @@ export default function ForoProvokerClientWrapper({
 
       <main className={styles.mainWrapper}>
         <div className={styles.coverImage}>
-          <img src={foroCover.src} alt="Imagen de fondo del foro provoker" />
-          <h1>FORO PROVOKER</h1>
+          <img src={faqInfoData.bgImage} alt="Imagen de fondo del foro provoker" />
+          <h1>{faqInfoData.title}</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis.
+            {faqInfoData.description}
           </p>
         </div>
 

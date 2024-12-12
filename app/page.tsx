@@ -2,7 +2,6 @@ import CustomFooter from "./components/footer/custom-footer";
 import CustomHeader from "./components/header/custom-header";
 import styles from "./page.module.css";
 import WhereFindUs from "./components/home/where-find-us";
-import FeaturedBlog from "./components/home/featured-blog";
 import FeaturedRecipe from "./components/home/featured-recipe";
 import FeaturedProducts from "./components/home/featured-products";
 import FeaturedReviews from "./components/home/featured-reviews";
@@ -20,7 +19,6 @@ import {
   recipesPage,
   whereFindUs,
 } from "./utils/constants";
-import HomeHero from "./components/home/HomeFooter";
 import HomeFooter from "./components/home/HomeFooter";
 import HomeHeader from "./components/home/HomeHeader";
 

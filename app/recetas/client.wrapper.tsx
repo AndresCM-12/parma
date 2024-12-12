@@ -5,7 +5,7 @@ import CustomFooter from "../components/footer/custom-footer";
 import blogCover from "../../public/images/recetas-cover.png";
 import { useLayoutEffect, useState } from "react";
 import timerIcon from "../../public/images/time-icon.svg";
-
+import kraftBg from "../../public/images/kraft.webp";
 export default function RecipesClientWrapper({ recipes }: any) {
   const [selectedStore, setSelectedStore] = useState("appetizers");
   const [stores, setStores] = useState(recipes);
@@ -29,7 +29,10 @@ export default function RecipesClientWrapper({ recipes }: any) {
         <section className={styles.blogCover}>
           <h1>RECETAS</h1>
           <img src={blogCover.src} alt="Imagen de fondo" />
-          <div className={styles.floatingMenu}>
+          <div className={styles.floatingMenu} style={{
+            backgroundImage: `url(${kraftBg.src})`,
+            backgroundSize: "cover",
+          }}>
             {stores?.map((store: any, index: number) => (
               <p
                 key={index}

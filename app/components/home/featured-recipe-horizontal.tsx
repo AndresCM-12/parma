@@ -76,9 +76,10 @@ export default function FeaturedRecipeHorizontal({ recipes }: any) {
                 </div>
               </div>
               <div className={styles.descriptionWrapper}>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
-              <img src={item.image} alt="Imagen de producto" />
+              <img src={item.image ?? item.backgroundImage} alt="Imagen de producto" />
             </SwiperSlide>
           ))}
         </Swiper>

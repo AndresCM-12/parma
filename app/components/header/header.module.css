@@ -13,7 +13,7 @@
 
 .leftContainer {
   display: flex;
-  gap: 12px;
+  gap: 40px;
 }
 
 .rightContainer {
@@ -55,7 +55,7 @@
 .leftContainer nav {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 30px;
 }
 
 .leftContainer nav .linkWrapper {

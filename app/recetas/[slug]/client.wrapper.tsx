@@ -5,15 +5,20 @@ import CustomFooter from "../../components/footer/custom-footer";
 import { useEffect, useState } from "react";
 import FeaturedRecipeHorizontal from "@/app/components/home/featured-recipe-horizontal";
 import { fetchArrayInPost, fetchPageDetailInfo } from "@/app/utils/methods";
-import { featuredRecipes } from "@/app/utils/constants";
+import { RecipeInterface, featuredRecipes, recipesPage } from "@/app/utils/constants";
 
 export default function ClientWrapperRecipe() {
   useEffect(() => {
     const path = window.location.pathname.split("/")[2];
     const getProductDetail = async () => {
       const response = await fetchPageDetailInfo(path);
-      const recipes = await fetchArrayInPost(featuredRecipes);
-      setItems(recipes);
+      const recipes = (await fetchArrayInPost(recipesPage))
+      .flatMap((items: any) => items.blogs) as RecipeInterface[];
+
+      //Order in random way the recipes 10 recipes
+      const randomRecipes = recipes.sort(() => Math.random() - 0.5).slice(0, 10);
+
+      setItems(randomRecipes);
       setProductDetail(response);
     };
 
@@ -35,7 +40,7 @@ export default function ClientWrapperRecipe() {
     {} as ProductDetailInterface
   );
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([] as RecipeInterface[]);
 
   return (
     <>
