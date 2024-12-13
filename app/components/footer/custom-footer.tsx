@@ -6,6 +6,7 @@ import facebookIcon from "../../../public/social-icons/facebook-icon.svg";
 import instagramIcon from "../../../public/social-icons/instagram-icon.svg";
 import youtubeIcon from "../../../public/social-icons/youtube-icon.svg";
 import spotifyIcon from "../../../public/social-icons/spotify-icon.svg";
+import ClientWrapperFooter from "./client-wrapper-footer";
 
 export default function CustomFooter() {
   return (
@@ -81,18 +82,17 @@ export default function CustomFooter() {
           </a>
         </div>
         <p className={styles.title}>Únete a nuestro club Provoker</p>
-        <span style={{
-          maxWidth: "300px",
-          fontSize: "12px",
-          marginBottom: "8px",
-          display: "block",
-        }}>
+        <span
+          style={{
+            maxWidth: "300px",
+            fontSize: "12px",
+            marginBottom: "8px",
+            display: "block",
+          }}
+        >
           Sé el primero en descubrir sabores únicos, recetas, inspiración y más.
         </span>
-        <form action="POST">
-          <input type="email" placeholder="Correo electrónico" />
-          <button type="submit">Suscríbete</button>
-        </form>
+        <ClientWrapperFooter />
         {/* <div className={styles.clientService}>
           <p
             style={{

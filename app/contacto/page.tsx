@@ -14,6 +14,8 @@ export default function Home() {
         </div>
         <div className={styles.bottomWrapper}>
           <form
+            action="https://formsubmit.co/atencionclientes@bafar.com.mx"
+            method="POST"
             className={styles.formWrapper}
             style={{
               backgroundImage: `url(${kraftBg.src})`,
