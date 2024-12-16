@@ -1,5 +1,6 @@
 import axios from "axios";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { env } from "process";
 import { z } from "zod";
 
 type Data = { message?: string; error?: string };
@@ -20,9 +21,9 @@ const subscribeHandler = async (
     return res.status(400).json({ error: "Por favor ingrese un email válido" });
   }
 
-  const API_KEY = "dda03abaaecaec5c3febd94e01b696c3-us12";
-  const API_SERVER = "us12";
-  const AUDIENCE_ID = "81b126cb59";
+  const API_KEY = env.MAILCHIMP_API_KEY;
+  const API_SERVER = env.MAILCHIMP_API_SERVER;
+  const AUDIENCE_ID = env.MAILCHIMP_AUDIENCE_ID;
 
   const url = `https://${API_SERVER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
 
