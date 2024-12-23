@@ -7,6 +7,11 @@ import spotifyLogo from "../../../public/images/spotify-logo.svg";
 import openMenuIcon from "../../../public/images/open-menu.svg";
 import MobileMenu from "./mobile-menu";
 
+import facebookIcon from "../../../public/social-icons/facebook-icon.svg";
+import instagramIcon from "../../../public/social-icons/instagram-icon.svg";
+import youtubeIcon from "../../../public/social-icons/youtube-icon.svg";
+import spotifyIcon from "../../../public/social-icons/spotify-icon.svg";
+
 export default function CustomHeader() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [selectedPage, setSelectedPage] = useState<string>("");
@@ -54,6 +59,44 @@ export default function CustomHeader() {
           </nav>
         </div>
         <div className={styles.rightContainer}>
+          <div className={styles.iconWrappers}>
+            <a href="https://www.facebook.com/PARMAMexico" target="_blank">
+              <img
+                src={facebookIcon.src}
+                alt="Ícono de facebook"
+                width={20}
+                height={20}
+                style={{
+                  filter: "invert(1)",
+                }}
+              />
+            </a>
+            <a href="https://www.instagram.com/parmamexico" target="_blank">
+              <img
+                src={instagramIcon.src}
+                alt="Ícono de instagram"
+                width={20}
+                height={20}
+                style={{
+                  filter: "invert(1)",
+                }}
+              />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC5eZukx47tz-1QJg_HrZ_KQ"
+              target="_blank"
+            >
+              <img
+                src={youtubeIcon.src}
+                alt="Ícono de youtube"
+                width={20}
+                height={20}
+                style={{
+                  filter: "invert(1)",
+                }}
+              />
+            </a>
+          </div>
           <a href="/maridajes">Maridajes</a>
           <a
             href="https://open.spotify.com/user/31io5d5xvnxvnbbdvkjvnt67y4ea?si=zjDaTErcTr2VKRSzouDZpw"

@@ -96,6 +96,18 @@
   display: none;
 }
 
+.iconWrappers{
+  display: flex;
+  gap: 4px;
+}
+
+.iconWrappers a {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border: none;
+}
+
 .dialogBackground {
   position: fixed;
   top: 0;
@@ -168,7 +180,7 @@
   opacity: 100%;
 }
 
-@media screen and (max-width: 942px) {
+@media screen and (max-width: 1050px) {
   .leftContainer nav {
     display: none;
   }

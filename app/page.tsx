@@ -21,6 +21,7 @@ import {
 } from "./utils/constants";
 import HomeFooter from "./components/home/HomeFooter";
 import HomeHeader from "./components/home/HomeHeader";
+import HelpFloatingIcon from "./components/HelpFloatingIcon";
 
 export default async function Home() {
   const products = (await fetchArrayInPost(
@@ -39,6 +40,7 @@ export default async function Home() {
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <main className={styles.mainWrapper}>
         <HomeHeader homeInfo={homeInfo.header} />

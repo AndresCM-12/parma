@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { RecipeInterface, Review } from "@/app/utils/constants";
 import { fetchPageDetailInfo } from "@/app/utils/methods";
+import HelpFloatingIcon from "@/app/components/HelpFloatingIcon";
 
 export default function Home() {
   useEffect(() => {
@@ -62,6 +63,7 @@ export default function Home() {
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       {productDetails.title ? (
         <main className={styles.mainWrapper}>
@@ -152,11 +154,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.presentationWrapper} >
-            <h3 style={{
-            backgroundImage: `url(${kraftBg.src})`,
-            backgroundSize: "cover",
-          }}>PRESENTACIONES</h3>
+          <div className={styles.presentationWrapper}>
+            <h3
+              style={{
+                backgroundImage: `url(${kraftBg.src})`,
+                backgroundSize: "cover",
+              }}
+            >
+              PRESENTACIONES
+            </h3>
             <div className={styles.presentationItems}>
               {productDetails.presentations?.map((presentation, index) => (
                 <a

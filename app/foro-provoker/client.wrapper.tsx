@@ -25,6 +25,7 @@ import {
 } from "firebase/firestore";
 import commentIcon from "../../public/images/comment-icon.svg";
 import Snackbar from "@mui/material/Snackbar";
+import HelpFloatingIcon from "../components/HelpFloatingIcon";
 
 export default function ForoProvokerClientWrapper({
   faqQuestions,
@@ -138,6 +139,7 @@ export default function ForoProvokerClientWrapper({
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <Snackbar
         autoHideDuration={10000}
@@ -158,11 +160,12 @@ export default function ForoProvokerClientWrapper({
 
       <main className={styles.mainWrapper}>
         <div className={styles.coverImage}>
-          <img src={faqInfoData.bgImage} alt="Imagen de fondo del foro provoker" />
+          <img
+            src={faqInfoData.bgImage}
+            alt="Imagen de fondo del foro provoker"
+          />
           <h1>{faqInfoData.title}</h1>
-          <p>
-            {faqInfoData.description}
-          </p>
+          <p>{faqInfoData.description}</p>
         </div>
 
         <div className={styles.headerWrapper}>

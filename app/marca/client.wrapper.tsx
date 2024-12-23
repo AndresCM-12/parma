@@ -14,6 +14,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import leftArrow from "../../public/images/left-arrow-red.svg";
 import rightArrow from "../../public/images/right-arrow-red.svg";
 import kraftBg from "../../public/images/kraft.webp";
+import HelpFloatingIcon from "../components/HelpFloatingIcon";
 
 export default function MarcaClientWrapper({
   timeLine,
@@ -22,6 +23,7 @@ export default function MarcaClientWrapper({
 }: any) {
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <main className={styles.mainWrapper}>
         <div className={styles.coverImage}>
@@ -31,13 +33,14 @@ export default function MarcaClientWrapper({
             alt="Imagen de fondo"
           />
 
-          <div className={styles.titleWrapper}>
-            <div className={styles.text} style={{
+          <div
+            className={styles.titleWrapper}
+            style={{
               backgroundImage: `url(${kraftBg.src})`,
               backgroundSize: "cover",
-              borderTopLeftRadius: "46px",
-              borderBottomLeftRadius: "46px",
-            }}>
+            }}
+          >
+            <div className={styles.text}>
               <h1>QUIENES SOMOS</h1>
               <p>
                 Somos la marca de Grupo Bafar especializada en Madurados y
@@ -140,16 +143,21 @@ export default function MarcaClientWrapper({
         </div> */}
 
         <div className={styles.processWrapper}>
-          <h5 style={
-            {
-              marginTop: "80px"
-            }
-          }>PROCESOS</h5>
+          <h5
+            style={{
+              marginTop: "80px",
+            }}
+          >
+            PROCESOS
+          </h5>
 
-          <div className={styles.swiperWrapper} style={{
-            backgroundImage: `url(${kraftBg.src})`,
-            backgroundSize: "cover",
-          }}>
+          <div
+            className={styles.swiperWrapper}
+            style={{
+              backgroundImage: `url(${kraftBg.src})`,
+              backgroundSize: "cover",
+            }}
+          >
             <Swiper
               id="us-process"
               slidesPerView={"auto"}

@@ -6,6 +6,7 @@ import blogCover from "../../public/images/recetas-cover.png";
 import { useLayoutEffect, useState } from "react";
 import timerIcon from "../../public/images/time-icon.svg";
 import kraftBg from "../../public/images/kraft.webp";
+import HelpFloatingIcon from "../components/HelpFloatingIcon";
 export default function RecipesClientWrapper({ recipes }: any) {
   const [selectedStore, setSelectedStore] = useState("appetizers");
   const [stores, setStores] = useState(recipes);
@@ -19,20 +20,23 @@ export default function RecipesClientWrapper({ recipes }: any) {
     if (locationHash.length > 0) {
       setSelectedStore(locationHash.replace("#", ""));
     }
-
   }, []);
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <main className={styles.mainWrapper}>
         <section className={styles.blogCover}>
           <h1>RECETAS</h1>
           <img src={blogCover.src} alt="Imagen de fondo" />
-          <div className={styles.floatingMenu} style={{
-            backgroundImage: `url(${kraftBg.src})`,
-            backgroundSize: "cover",
-          }}>
+          <div
+            className={styles.floatingMenu}
+            style={{
+              backgroundImage: `url(${kraftBg.src})`,
+              backgroundSize: "cover",
+            }}
+          >
             {stores?.map((store: any, index: number) => (
               <p
                 key={index}

@@ -5,18 +5,26 @@ import CustomFooter from "../../components/footer/custom-footer";
 import { useEffect, useState } from "react";
 import FeaturedRecipeHorizontal from "@/app/components/home/featured-recipe-horizontal";
 import { fetchArrayInPost, fetchPageDetailInfo } from "@/app/utils/methods";
-import { RecipeInterface, featuredRecipes, recipesPage } from "@/app/utils/constants";
+import {
+  RecipeInterface,
+  featuredRecipes,
+  recipesPage,
+} from "@/app/utils/constants";
+import HelpFloatingIcon from "@/app/components/HelpFloatingIcon";
 
 export default function ClientWrapperRecipe() {
   useEffect(() => {
     const path = window.location.pathname.split("/")[2];
     const getProductDetail = async () => {
       const response = await fetchPageDetailInfo(path);
-      const recipes = (await fetchArrayInPost(recipesPage))
-      .flatMap((items: any) => items.blogs) as RecipeInterface[];
+      const recipes = (await fetchArrayInPost(recipesPage)).flatMap(
+        (items: any) => items.blogs
+      ) as RecipeInterface[];
 
       //Order in random way the recipes 10 recipes
-      const randomRecipes = recipes.sort(() => Math.random() - 0.5).slice(0, 10);
+      const randomRecipes = recipes
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 10);
 
       setItems(randomRecipes);
       setProductDetail(response);
@@ -44,6 +52,7 @@ export default function ClientWrapperRecipe() {
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       {productDetail.image ? (
         <main className={styles.mainWrapper}>

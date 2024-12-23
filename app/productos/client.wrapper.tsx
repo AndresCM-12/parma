@@ -6,12 +6,14 @@ import trailing from "../../public/images/trail_white.svg";
 import longRightArrow from "../../public/images/long-right-arrow.svg";
 import { useState } from "react";
 import CustomFooter from "../components/footer/custom-footer";
+import HelpFloatingIcon from "../components/HelpFloatingIcon";
 
 export default function ClientProductsWrapper({ items }: any) {
   const [products, setProducts] = useState(items);
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <main className={styles.mainWrapper}>
         <div className={styles.imageCover}>

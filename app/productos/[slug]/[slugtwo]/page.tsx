@@ -18,6 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { fetchArrayInPost, fetchPageDetailInfo } from "@/app/utils/methods";
 import { whereFindUs } from "@/app/utils/constants";
+import HelpFloatingIcon from "@/app/components/HelpFloatingIcon";
 
 export default function Home() {
   useEffect(() => {
@@ -70,6 +71,7 @@ export default function Home() {
   const [whereFindUsItems, setWhereFindUs] = useState([]);
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       {productDetails.description ? (
         <main className={styles.mainWrapper}>

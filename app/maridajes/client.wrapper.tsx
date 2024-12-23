@@ -11,6 +11,7 @@ import leftArrow from "../../public/images/left-arrow-brown.svg";
 import rightArrow from "../../public/images/right-arrow-brown.svg";
 
 import "swiper/css";
+import HelpFloatingIcon from "../components/HelpFloatingIcon";
 
 export default function MaridajeClientWrapper({ items }: any) {
   const [selectedCategory, setSelectedCategory] = useState("productos");
@@ -29,6 +30,7 @@ export default function MaridajeClientWrapper({ items }: any) {
 
   return (
     <>
+      <HelpFloatingIcon />
       <CustomHeader />
       <main className={styles.mainWrapper}>
         <div className={styles.headerWrapper}>

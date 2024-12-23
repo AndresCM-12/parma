@@ -189,7 +189,11 @@
   z-index: 1;
   left: 0;
   top: 0;
-  filter: brightness(0.7);
+  filter: brightness(0.5);
+}
+
+.timeLineItem p{
+text-shadow: 2px 2px 4px #000000;
 }
 
 .timeLineItem h6 {
