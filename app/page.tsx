@@ -49,7 +49,7 @@ export default async function Home() {
         {/* <FeaturedBlog blogItems={blogs} /> */}
         <WhereFindUs stores={stores} />
         <HomeFooter homeInfo={homeInfo.footer} />
-        <FeaturedReviews reviews={reviews} />
+        <FeaturedReviews reviews={reviews} useReviews={false} />
       </main>
       <CustomFooter />
     </>

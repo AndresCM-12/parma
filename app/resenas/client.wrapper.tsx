@@ -6,7 +6,7 @@ import filledStar from "../../public/images/full-star.svg";
 import emptyStar from "../../public/images/empty-star.svg";
 
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import leftArrow from "../../public/images/left-arrow-brown.svg";
@@ -14,11 +14,61 @@ import rightArrow from "../../public/images/right-arrow-brown.svg";
 
 import "swiper/css";
 import { Pagination } from "swiper/modules";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { collection, getFirestore, query } from "firebase/firestore";
+import { app } from "../firebase/config";
 
 export default function ClientReviewsWrapper({ items }: any) {
   const [selectedItem, setSelectedItem] = useState(null as any);
 
   const [products, setProducts] = useState(items);
+
+  const [reviewsToShow, setReviewsToShow] = useState() as any;
+
+  const [snapshot, loading, error] = useCollection(
+    query(collection(getFirestore(app), "reviews"))
+  );
+
+  useEffect(() => {
+    if (reviewsToShow === undefined) {
+      initData();
+    }
+  });
+
+  function initData() {
+    const reviewsData = snapshot?.docs;
+
+    if (!loading) {
+      const reviewsObject: Record<string, any> = {};
+
+      reviewsData?.forEach((doc) => {
+        const review = doc.data();
+        Object.keys(review).forEach((key) => {
+          if (!reviewsObject[key]) {
+            reviewsObject[key] = { reviews: [] };
+          }
+
+          const existingReviews = reviewsObject[key].reviews.flat();
+          const newReviews = (review[key]?.reviews || []).filter(
+            (r: any) => r.visible === true
+          );
+          const allReviews = [...existingReviews, ...newReviews];
+
+          reviewsObject[key].reviews = chunkArray(allReviews, 6);
+        });
+      });
+
+      setReviewsToShow(reviewsObject);
+    }
+  }
+
+  function chunkArray(array: any[], size: number): any[][] {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  }
 
   return (
     <>
@@ -120,7 +170,7 @@ export default function ClientReviewsWrapper({ items }: any) {
               modules={[Pagination]}
               grabCursor={true}
             >
-              {products[selectedItem].reviews.map(
+              {reviewsToShow[items[selectedItem].firebaseID].reviews.map(
                 (review: any, index: number) => (
                   <SwiperSlide key={index}>
                     <div className={styles.swiperSlide}>
@@ -135,7 +185,7 @@ export default function ClientReviewsWrapper({ items }: any) {
                         >
                           <img
                             className={styles.image}
-                            src={reviewItem.image}
+                            src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
                             alt={reviewItem.title}
                           />
                           <div className={styles.text}>
@@ -144,7 +194,7 @@ export default function ClientReviewsWrapper({ items }: any) {
                                 <img
                                   key={index}
                                   src={
-                                    star <= reviewItem.score
+                                    star <= reviewItem.puntaje
                                       ? filledStar.src
                                       : emptyStar.src
                                   }
@@ -152,8 +202,8 @@ export default function ClientReviewsWrapper({ items }: any) {
                                 />
                               ))}
                             </div>
-                            <h6>{reviewItem.title}</h6>
-                            <p>{reviewItem.description}</p>
+                            <h6>{reviewItem.nombre}</h6>
+                            <p>{reviewItem.reseña}</p>
                           </div>
                         </div>
                       ))}

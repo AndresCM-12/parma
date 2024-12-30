@@ -32,6 +32,9 @@ export default function FeaturedRecipeHorizontal({ recipes }: any) {
           {recipes?.map((item: any, index: number) => (
             <SwiperSlide
               className={styles.slideWrapper}
+              onClick={() => {
+                window.location.href = `${item.link}`;
+              }}
               style={{
                 width: "90%",
                 maxWidth: "400px",
@@ -44,6 +47,7 @@ export default function FeaturedRecipeHorizontal({ recipes }: any) {
                 alignItems: "flex-start",
                 padding: "20px",
                 color: "white",
+                cursor: "pointer",
               }}
               key={index}
             >
@@ -79,7 +83,10 @@ export default function FeaturedRecipeHorizontal({ recipes }: any) {
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
-              <img src={item.image ?? item.backgroundImage} alt="Imagen de producto" />
+              <img
+                src={item.image ?? item.backgroundImage}
+                alt="Imagen de producto"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

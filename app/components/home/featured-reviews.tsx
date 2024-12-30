@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./featured-reviews.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import leftArrow from "../../../public/images/left-arrow-brown.svg";
@@ -8,9 +8,64 @@ import emptyStar from "../../../public/images/empty-star.svg";
 import fullStar from "../../../public/images/full-star.svg";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-import { Review } from "@/app/utils/constants";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { app } from "@/app/firebase/config";
+import { collection, getFirestore, query } from "firebase/firestore";
 
-export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
+export default function FeaturedReviews({
+  reviews,
+  useReviews,
+}: {
+  reviews: any;
+  useReviews: boolean;
+}) {
+  //Use effect to get all reviews
+  const [reviewsToShow, setReviewsToShow] = useState() as any;
+  const [reviewsScore, setReviewsScore] = useState() as any;
+
+  const [snapshot, loading, error] = useCollection(
+    query(collection(getFirestore(app), "reviews"))
+  );
+
+  useEffect(() => {
+    if (reviewsToShow === undefined) {
+      initData();
+    }
+  });
+
+  function initData() {
+    const reviewsToShow = reviews;
+    const reviewsData = snapshot?.docs;
+    if (!loading) {
+      const reviewsArray: any = [];
+      reviewsData?.forEach((doc) => {
+        reviewsArray.push(doc.data());
+      });
+
+      reviewsArray.sort((a: any, b: any) => b.puntaje - a.puntaje);
+
+      const reviewsToShowArray: any = [];
+      reviewsToShow.forEach((reviewTitle: any) => {
+        reviewsArray.forEach((doc: any) => {
+          if (doc[reviewTitle]) {
+            if (doc[reviewTitle].reviews.length > 0) {
+              reviewsToShowArray.push(...doc[reviewTitle].reviews);
+            }
+          }
+        });
+      });
+
+      const reviewsToShowArrayFiltered: any = [];
+      reviewsToShowArray.forEach((review: any) => {
+        if (review.visible) {
+          reviewsToShowArrayFiltered.push(review);
+        }
+      });
+
+      setReviewsToShow(reviewsToShowArrayFiltered);
+    }
+  }
+
   return (
     <div className={styles.swiperWrapper}>
       <div
@@ -44,30 +99,61 @@ export default function FeaturedReviews({ reviews }: { reviews: Review[] }) {
           disableOnInteraction: false,
         }}
       >
-        {reviews.map((review, index) => (
-          <SwiperSlide
-            key={index}
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              gap: "20px",
-              maxWidth: "100%",
-            }}
-          >
-            <div className={styles.swiperSlide}>
-              <div className={styles.images}>
-                <img src={review.image} alt="Imagen de usuario" />
-              </div>
-              <div className={styles.textWrapper}>
-                {getStars(review.score)}
-                <h6>{review.title}</h6>
-                <p>{review.description}</p>
-                <a href="/resenas">Ver más</a>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+        {useReviews
+          ? reviews?.map((review: any, index: number) => (
+              <SwiperSlide
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "20px",
+                  maxWidth: "100%",
+                }}
+              >
+                <div className={styles.swiperSlide}>
+                  <div className={styles.images}>
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
+                      alt="Imagen de usuario"
+                    />
+                  </div>
+                  <div className={styles.textWrapper}>
+                    {getStars(review.puntaje)}
+                    <h6>{review.nombre}</h6>
+                    <p>{review.reseña}</p>
+                    <a href="/resenas">Ver más</a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))
+          : reviewsToShow?.map((review: any, index: number) => (
+              <SwiperSlide
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "20px",
+                  maxWidth: "100%",
+                }}
+              >
+                <div className={styles.swiperSlide}>
+                  <div className={styles.images}>
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
+                      alt="Imagen de usuario"
+                    />
+                  </div>
+                  <div className={styles.textWrapper}>
+                    {getStars(review.puntaje)}
+                    <h6>{review.nombre}</h6>
+                    <p>{review.reseña}</p>
+                    <a href="/resenas">Ver más</a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
       </Swiper>
 
       <div

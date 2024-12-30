@@ -16,6 +16,9 @@ import "swiper/css/pagination";
 import { RecipeInterface, Review } from "@/app/utils/constants";
 import { fetchPageDetailInfo } from "@/app/utils/methods";
 import HelpFloatingIcon from "@/app/components/HelpFloatingIcon";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { collection, getFirestore, query } from "firebase/firestore";
+import { app } from "@/app/firebase/config";
 
 export default function Home() {
   useEffect(() => {
@@ -27,6 +30,65 @@ export default function Home() {
 
     if (productDetails?.title === undefined) getProductsInfo();
   }, []);
+
+  //Use effect to get all reviews
+  const [reviewDetails, setReviewDetails] = useState() as any;
+  const [url, setUrl] = useState("");
+  const [reviewsToShow, setReviewsToShow] = useState() as any;
+  const [reviewsScore, setReviewsScore] = useState() as any;
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    const urlLength = currentUrl.split("/").length;
+    setUrl(currentUrl.split("/")[urlLength - 1]);
+
+    if (reviewDetails === undefined) {
+      initData();
+    }
+  });
+
+  const [snapshot, loading, error] = useCollection(
+    query(collection(getFirestore(app), "reviews"))
+  );
+
+  function initData() {
+    const reviewsData = snapshot?.docs;
+    const selectedDoc = reviewsData?.find((doc) => doc.id === url);
+    const data = selectedDoc?.data();
+    setReviewDetails(data);
+    if (!loading) {
+      let reviewsToShow: any[] = [];
+      for (const key in data) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+          const element = data[key];
+          reviewsToShow = [...reviewsToShow, ...element.reviews];
+        }
+      }
+
+      reviewsToShow = reviewsToShow.filter((review: any) => review.visible);
+
+      setReviewsToShow(reviewsToShow);
+
+      try {
+        let totalScore = 0;
+        let totalReviews = 0;
+        for (const key in data) {
+          if (Object.prototype.hasOwnProperty.call(data, key)) {
+            const element = data[key];
+            element.reviews.forEach((review: any) => {
+              if (!review.visible) return;
+              totalScore += Number(review.puntaje);
+              totalReviews++;
+            });
+          }
+        }
+
+        setReviewsScore(totalScore / totalReviews);
+      } catch (error) {
+        setReviewsScore(0);
+      }
+    }
+  }
 
   interface ProductDetailsInterface {
     title: string;
@@ -68,22 +130,24 @@ export default function Home() {
       {productDetails.title ? (
         <main className={styles.mainWrapper}>
           <div className={styles.bannerWrapper}>
-            <div className={styles.starsWrapper}>
-              <div className={styles.stars}>
-                <p>{productDetails.rate}</p>
-                {Array.from({ length: 5 }, (_, index) => (
-                  <img
-                    key={index}
-                    src={
-                      index + 1 < Math.ceil(productDetails.rate)
-                        ? filledStar.src
-                        : emptyStar.src
-                    }
-                    alt="star"
-                  />
-                ))}
+            {reviewsToShow?.length > 0 && !loading && (
+              <div className={styles.starsWrapper}>
+                <div className={styles.stars}>
+                  <p>{reviewsScore}</p>
+                  {Array.from({ length: 5 }, (_, index) => (
+                    <img
+                      key={index}
+                      src={
+                        index < Math.ceil(reviewsScore)
+                          ? filledStar.src
+                          : emptyStar.src
+                      }
+                      alt="star"
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
             <img
               className={styles.backgroundImage}
               src={productDetails.image}
@@ -188,7 +252,9 @@ export default function Home() {
 
           <FeaturedRecipe recipes={productDetails.recipes} />
 
-          <FeaturedReviews reviews={productDetails.reviews} />
+          {reviewsToShow?.length > 0 && (
+            <FeaturedReviews reviews={reviewsToShow} useReviews={true} />
+          )}
         </main>
       ) : (
         <div style={{ height: "100vh" }}></div>
