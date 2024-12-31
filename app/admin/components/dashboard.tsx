@@ -2,11 +2,19 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 
 import React, { useEffect, useState } from "react";
-import { Home, LogOut, Menu, X, MessagesSquare } from "lucide-react";
+import {
+  Home,
+  LogOut,
+  Menu,
+  X,
+  MessagesSquare,
+  NotebookPen,
+} from "lucide-react";
 import styles from "./dashboard.module.css";
 import HomeAdmin from "./home";
 import parmaLogo from "../../../public/images/black-logo.webp";
 import AdminQuestions from "./questions";
+import AdminReviews from "./reviews";
 
 const Dashboard = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -20,6 +28,11 @@ const Dashboard = () => {
       title: "Preguntas",
       icon: <MessagesSquare size={24} />,
       hash: "#preguntas",
+    },
+    {
+      title: "Reseñas",
+      icon: <NotebookPen size={24} />,
+      hash: "#resenas",
     },
   ];
 
@@ -53,6 +66,8 @@ const Dashboard = () => {
         return <HomeAdmin />;
       case "#preguntas":
         return <AdminQuestions />;
+      case "#resenas":
+        return <AdminReviews />;
       default:
         return <HomeAdmin />;
     }

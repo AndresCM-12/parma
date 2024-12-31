@@ -93,9 +93,14 @@ export default function CreateReview() {
   function prepareDataForShowReviews(data: any) {
     const reviewsData = data[url];
 
-    var reviewsToShow = [];
+    let reviewsToShow = [];
     let tempArray = [] as any;
-    reviewsData?.reviews.forEach((review: any, index: number) => {
+
+    const visibleReviews = reviewsData?.reviews.filter(
+      (review: any) => review.visible === true
+    );
+
+    visibleReviews.forEach((review: any, index: number) => {
       tempArray.push(review);
       if (index % 6 === 5) {
         reviewsToShow.push(tempArray);
@@ -106,10 +111,6 @@ export default function CreateReview() {
     if (tempArray.length > 0) {
       reviewsToShow.push(tempArray);
     }
-
-    reviewsToShow = reviewsToShow.filter((review: any) => {
-      return review[0].visible === true;
-    });
 
     setReviewsToShow(reviewsToShow);
   }

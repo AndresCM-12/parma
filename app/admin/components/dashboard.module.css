@@ -412,6 +412,115 @@
   border: 0px solid #ccc;
 }
 
+.reviewsWrapper {
+  border-bottom: 1px solid #ccc;
+}
+
+.reviewsWrapper .mainProductHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewsWrapper h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+.expandButton {
+  cursor: pointer;
+  color: #333;
+}
+
+.reviewsCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  height: fit-content;
+  margin-left: 8px;
+  width: 100%;
+  gap: 16px;
+}
+
+.reviewsCard h5 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.reviewsWrapper .reviewCard {
+  display: flex !important;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 6px;
+  padding: 12px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+  position: relative;
+  gap: 20px;
+}
+
+.reviewCard .visibilityButton {
+  cursor: pointer;
+  color: #333;
+}
+
+.emptyReviews {
+  margin-bottom: 20px;
+}
+
+.reviewCard .reviewHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.reviewCard .reviewHeader p {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+.reviewCard .reviewBody p {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.reviewCard .date {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 8px;
+}
+
+.reviewCard .date p {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+}
+
+.reviewCard button {
+  background-color: #333;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.reviewCard input {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
 @media screen and (max-width: 560px) {
   .questionCard {
     flex-direction: column;
