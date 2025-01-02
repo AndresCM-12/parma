@@ -82,8 +82,7 @@ export default function Home() {
             });
           }
         }
-
-        setReviewsScore(totalScore / totalReviews);
+        setReviewsScore((totalScore / totalReviews).toFixed(2));
       } catch (error) {
         setReviewsScore(0);
       }
