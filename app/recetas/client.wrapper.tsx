@@ -7,6 +7,8 @@ import { useLayoutEffect, useState } from "react";
 import timerIcon from "../../public/images/time-icon.svg";
 import kraftBg from "../../public/images/kraft.webp";
 import HelpFloatingIcon from "../components/HelpFloatingIcon";
+import trailing from "../../public/images/trail_white.svg";
+
 export default function RecipesClientWrapper({ recipes }: any) {
   const [selectedStore, setSelectedStore] = useState("appetizers");
   const [stores, setStores] = useState(recipes);
@@ -41,6 +43,7 @@ export default function RecipesClientWrapper({ recipes }: any) {
               <p
                 key={index}
                 style={{
+                  position: "relative",
                   opacity: store.title === selectedStore ? 1 : 0.4,
                   fontWeight: store.title === selectedStore ? "500" : "normal",
                 }}
@@ -50,6 +53,21 @@ export default function RecipesClientWrapper({ recipes }: any) {
                 }}
               >
                 {store.name}
+                <img
+                  style={{
+                    position: "absolute",
+                    objectFit: "contain",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bottom: "-6px",
+                    width: "100%",
+                    maxWidth: "50px",
+                    height: "8px",
+                    opacity: store.title === selectedStore ? 1 : 0,
+                  }}
+                  src={trailing.src}
+                  alt="Logo de parma"
+                />
               </p>
             ))}
           </div>

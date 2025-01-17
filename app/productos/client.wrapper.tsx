@@ -23,8 +23,26 @@ export default function ClientProductsWrapper({ items }: any) {
             alt="Imagen de fondo"
           />
           <div className={styles.titleWrapper}>
-            <h1>Descubre la excelencia detrás de cada producto Parma</h1>
-            <img src={trailing.src} alt="Logo de parma" />
+            <h1>
+              Descubre la excelencia detrás de cada producto{" "}
+              <span
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
+                Parma
+                <img
+                  style={{
+                    position: "absolute",
+                    bottom: "-20px",
+                    left: "0px",
+                  }}
+                  src={trailing.src}
+                  alt="Logo de parma"
+                />
+              </span>
+            </h1>
           </div>
           <p>
             Una selección única de madurados y delicatessen que elevan cualquier
@@ -33,8 +51,12 @@ export default function ClientProductsWrapper({ items }: any) {
             amantes de la gastronomía a explorar sabores auténticos y texturas
             inigualables. Perfectos para deleitar tus sentidos, transformar tus
             recetas y compartir momentos inolvidables.
-            <br />
-            ¡Explora nuestra gama y lleva lo mejor de Parma a tu mesa!
+            <span
+              style={{ marginTop: "12px", display: "block", fontSize: "16px" }}
+            >
+              ¡Explora nuestra gama y lleva lo mejor de <br />
+              Parma a tu mesa!
+            </span>
           </p>
         </div>
 
