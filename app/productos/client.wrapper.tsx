@@ -66,9 +66,12 @@ export default function ClientProductsWrapper({ items }: any) {
               <img
                 src={product.image}
                 width={220}
+                height={280}
                 style={{
                   filter: "brightness(0.8)",
                   objectFit: "cover",
+                  height: "100%",
+                  minHeight: "280px",
                 }}
                 alt="Imagen de producto"
               />

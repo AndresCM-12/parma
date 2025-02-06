@@ -59,7 +59,8 @@
 }
 
 .blogItem {
-  display: flex;
+  display: grid;
+  grid-template-columns: 220px 1fr;
   background-color: #705b3d;
   max-width: 480px;
   width: 90%;
@@ -134,6 +135,7 @@
     text-align: center;
   }
   .blogItem {
+    display: flex;
     flex-direction: column;
     height: fit-content;
     padding-inline-end: 0px;
@@ -141,6 +143,7 @@
 
   .blogItem img {
     width: 100%;
+    max-height: 280px;
   }
 
   .blogItemContent {
