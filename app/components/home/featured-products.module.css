@@ -31,7 +31,7 @@
   object-fit: contain;
   z-index: 1;
   right: 60px !important;
-  bottom: -8px !important;
+  bottom: -16px !important;
 }
 
 .featuredProductWrapper .link {
@@ -75,13 +75,27 @@
 }
 
 @media screen and (max-width: 438px) {
+  .featuredProductWrapper {
+    padding-inline: 16px;
+  }
   .featuredProductWrapper .titleWrapper img {
     position: absolute !important;
     width: 100px;
     height: auto;
     object-fit: contain;
     z-index: 1;
-    right: 120px !important;
-    bottom: 0px !important;
+    right: 0px !important;
+    bottom: -16px !important;
+  }
+}
+@media screen and (max-width: 412px) {
+  .featuredProductWrapper .titleWrapper img {
+    position: absolute !important;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    z-index: 1;
+    right: 100px !important;
+    bottom: -16px !important;
   }
 }
