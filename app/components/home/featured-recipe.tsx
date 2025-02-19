@@ -93,8 +93,21 @@ export default function FeaturedRecipe({
                 </div>
               </div>
               <div className={styles.descriptionWrapper}>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <h3
+                  style={{
+                    fontSize: "20px",
+                    marginBottom: "4px",
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    fontWeight: "200",
+                  }}
+                >
+                  {item.description}
+                </p>
               </div>
               <img
                 src={item.image ?? item.backgroundImage}

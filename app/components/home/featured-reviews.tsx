@@ -67,113 +67,10 @@ export default function FeaturedReviews({
   }
 
   return (
-    <div className={styles.swiperWrapper}>
-      <div
-        id="featured-reviews-left-arrow"
-        className={styles.arrow}
-        onClick={() => {
-          const document: any = window.document;
-          const swiper = document.querySelector("#featured-reviews")?.swiper;
-          swiper.slidePrev();
-        }}
-      >
-        <img
-          src={leftArrow.src}
-          alt="Flecha para la izquierda"
-          width={48}
-          height={48}
-        />
-      </div>
-
-      <Swiper
-        id="featured-reviews"
-        slidesPerView={1}
-        spaceBetween={30}
-        className={styles.swiperContainer}
-        loop={true}
-        style={{ width: "100%" }}
-        modules={[Autoplay]}
-        speed={600}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-      >
-        {useReviews
-          ? reviews?.map((review: any, index: number) => (
-              <SwiperSlide
-                key={index}
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "20px",
-                  maxWidth: "100%",
-                }}
-              >
-                <div className={styles.swiperSlide}>
-                  <div className={styles.images}>
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
-                      alt="Imagen de usuario"
-                    />
-                  </div>
-                  <div className={styles.textWrapper}>
-                    {getStars(review.puntaje)}
-                    <h6>{review.nombre}</h6>
-                    <p>{review.reseña}</p>
-                    <a href="/resenas">Ver más</a>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))
-          : reviewsToShow?.map((review: any, index: number) => (
-              <SwiperSlide
-                key={index}
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "20px",
-                  maxWidth: "100%",
-                }}
-              >
-                <div className={styles.swiperSlide}>
-                  <div className={styles.images}>
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
-                      alt="Imagen de usuario"
-                    />
-                  </div>
-                  <div className={styles.textWrapper}>
-                    {getStars(review.puntaje)}
-                    <h6>{review.nombre}</h6>
-                    <p>{review.reseña}</p>
-                    <a href="/resenas">Ver más</a>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-      </Swiper>
-
-      <div
-        id="featured-reviews-right-arrow"
-        className={styles.arrow}
-        onClick={() => {
-          const document: any = window.document;
-          const swiper = document.querySelector("#featured-reviews")?.swiper;
-          swiper.slideNext();
-        }}
-      >
-        <img
-          src={rightArrow.src}
-          alt="Flecha para la derecha"
-          width={48}
-          height={48}
-        />
-      </div>
-      <div className={styles.mobileArrows}>
+    reviewsToShow?.length > 0 && (
+      <div className={styles.swiperWrapper}>
         <div
+          id="featured-reviews-left-arrow"
           className={styles.arrow}
           onClick={() => {
             const document: any = window.document;
@@ -188,7 +85,80 @@ export default function FeaturedReviews({
             height={48}
           />
         </div>
+
+        <Swiper
+          id="featured-reviews"
+          slidesPerView={1}
+          spaceBetween={30}
+          className={styles.swiperContainer}
+          loop={true}
+          style={{ width: "100%" }}
+          modules={[Autoplay]}
+          speed={600}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+        >
+          {useReviews
+            ? reviews?.map((review: any, index: number) => (
+                <SwiperSlide
+                  key={index}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "20px",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <div className={styles.swiperSlide}>
+                    <div className={styles.images}>
+                      <img
+                        src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
+                        alt="Imagen de usuario"
+                      />
+                    </div>
+                    <div className={styles.textWrapper}>
+                      {getStars(review.puntaje)}
+                      <h6>{review.nombre}</h6>
+                      <p>{review.reseña}</p>
+                      <a href="/resenas">Ver más</a>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))
+            : reviewsToShow?.map((review: any, index: number) => (
+                <SwiperSlide
+                  key={index}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: "20px",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <div className={styles.swiperSlide}>
+                    <div className={styles.images}>
+                      <img
+                        src="https://cdn.iconscout.com/icon/free/png-256/free-person-icon-download-in-svg-png-gif-file-formats--user-male-young-profile-interface-vol-1-pack-icons-2202553.png?f=webp&w=256"
+                        alt="Imagen de usuario"
+                      />
+                    </div>
+                    <div className={styles.textWrapper}>
+                      {getStars(review.puntaje)}
+                      <h6>{review.nombre}</h6>
+                      <p>{review.reseña}</p>
+                      <a href="/resenas">Ver más</a>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+        </Swiper>
+
         <div
+          id="featured-reviews-right-arrow"
           className={styles.arrow}
           onClick={() => {
             const document: any = window.document;
@@ -203,8 +173,42 @@ export default function FeaturedReviews({
             height={48}
           />
         </div>
+        <div className={styles.mobileArrows}>
+          <div
+            className={styles.arrow}
+            onClick={() => {
+              const document: any = window.document;
+              const swiper =
+                document.querySelector("#featured-reviews")?.swiper;
+              swiper.slidePrev();
+            }}
+          >
+            <img
+              src={leftArrow.src}
+              alt="Flecha para la izquierda"
+              width={48}
+              height={48}
+            />
+          </div>
+          <div
+            className={styles.arrow}
+            onClick={() => {
+              const document: any = window.document;
+              const swiper =
+                document.querySelector("#featured-reviews")?.swiper;
+              swiper.slideNext();
+            }}
+          >
+            <img
+              src={rightArrow.src}
+              alt="Flecha para la derecha"
+              width={48}
+              height={48}
+            />
+          </div>
+        </div>
       </div>
-    </div>
+    )
   );
 }
 

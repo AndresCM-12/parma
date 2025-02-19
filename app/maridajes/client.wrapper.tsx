@@ -166,7 +166,7 @@ export default function MaridajeClientWrapper({ items }: any) {
           <div className={styles.matchesWrapper}>
             {selectedProducts.map((product: any, index: number) => (
               <div className={styles.product} key={index}>
-                <img src={product.image} alt="Producto" />
+                <img width={300} height={300} src={product.image} alt="Producto" />
                 <a href={product.link} target="_blank">
                   {product.title}
                 </a>

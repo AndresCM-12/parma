@@ -21,6 +21,10 @@ h5,
 h6 {
   font-family: var(--font-undergrow);
 }
+
+p {
+  font-weight: 300 ;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -33,7 +37,7 @@ a {
   background: #ffffff !important;
 }
 
-.swiper-pagination{
+.swiper-pagination {
   bottom: 0px !important;
 }
 

@@ -101,7 +101,13 @@ export default function RecipesClientWrapper({ recipes }: any) {
                 </div>
                 <div>
                   <h6>{store?.title}</h6>
-                  <p>{store?.description}</p>
+                  <p
+                    style={{
+                      fontWeight: "200",
+                    }}
+                  >
+                    {store?.description}
+                  </p>
                 </div>
               </div>
             ))}

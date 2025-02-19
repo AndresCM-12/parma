@@ -42,11 +42,19 @@ export default function MarcaClientWrapper({
           >
             <div className={styles.text}>
               <h1>QUIENES SOMOS</h1>
-              <p>
+              <p
+                style={{
+                  fontWeight: 200,
+                }}
+              >
                 Somos la marca de Grupo Bafar especializada en Madurados y
                 Delicatessen con más de 65 años de tradición.
               </p>
-              <p>
+              <p
+                style={{
+                  fontWeight: 200,
+                }}
+              >
                 Nuestros productos son ideales para quienes desean descubrir
                 nuevos sabores y texturas dentro de su cocina. Inspírate y
                 conviértete en todo un Food Provoker con todas las posibilidades

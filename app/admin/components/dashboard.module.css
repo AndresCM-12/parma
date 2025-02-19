@@ -449,7 +449,6 @@
 }
 
 .reviewsWrapper .reviewCard {
-  display: flex !important;
   flex-direction: row;
   width: 100%;
   justify-content: flex-start;

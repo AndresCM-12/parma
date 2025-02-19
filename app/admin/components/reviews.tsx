@@ -24,6 +24,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
+import { set } from "firebase/database";
 
 export default function AdminReviews() {
   const [status, setStatus] = useState("initial");
@@ -114,13 +115,18 @@ function ProductItem({ product }: { product: any }) {
   };
 
   const [expanded, setExpanded] = useState(false);
+  const [products, setProducts] = useState({} as { [key: string]: any });
 
-  const products: { [key: string]: any } = Object.keys(product)
-    .filter((key) => key !== "id")
-    .reduce((obj: any, key) => {
-      obj[key] = product[key];
-      return obj;
-    }, {});
+  useEffect(() => {
+    const newproducts: { [key: string]: any } = Object.keys(product)
+      .filter((key) => key !== "id")
+      .reduce((obj: any, key) => {
+        obj[key] = product[key];
+        return obj;
+      }, {});
+
+    setProducts(newproducts);
+  }, []);
 
   return (
     <div className={styles.reviewsWrapper}>
@@ -143,7 +149,7 @@ function ProductItem({ product }: { product: any }) {
       >
         <div>
           {Object.keys(products).map((key, index) => {
-            return products[key].reviews.length > 0 ? (
+            return products[key]?.reviews?.length > 0 ? (
               <div key={index}>
                 <h5>{enchantTitle(key)}</h5>
                 <div className={styles.reviews}>
@@ -153,6 +159,7 @@ function ProductItem({ product }: { product: any }) {
                         key={indexTwo}
                         review={review}
                         products={product}
+                        setProducts={setProducts}
                         currentProduct={key}
                         index={indexTwo}
                       />
@@ -178,11 +185,13 @@ function ProductItem({ product }: { product: any }) {
 function ProductReview({
   review,
   products,
+  setProducts,
   currentProduct,
   index,
 }: {
   review: any;
   products: any;
+  setProducts: any;
   currentProduct: any;
   index: number;
 }) {
@@ -212,7 +221,6 @@ function ProductReview({
 
   const handleDelete = async (index: number) => {
     const reviewRef = doc(getFirestore(app), "reviews", products.id);
-    //We remove the review from the array of reviews from the product
     const updatedDocument = {
       [currentProduct]: {
         reviews: [
@@ -222,9 +230,21 @@ function ProductReview({
       },
     };
 
-    await updateDoc(reviewRef, updatedDocument);
+    var productsUpdated = {
+      ...products,
+      [currentProduct]: {
+        reviews: [
+          ...products[currentProduct].reviews.slice(0, index),
+          ...products[currentProduct].reviews.slice(index + 1),
+        ],
+      },
+    };
 
-    setIsDeleted(true);
+    delete productsUpdated.id;
+
+    setProducts(productsUpdated);
+
+    updateDoc(reviewRef, updatedDocument);
   };
 
   const handleVisibility = async () => {
@@ -253,7 +273,7 @@ function ProductReview({
       key={index}
       className={styles.reviewCard}
       style={{
-        display: isDeleted ? "none" : "block",
+        display: isDeleted ? "none" : "flex",
       }}
     >
       <div className={styles.visibilityWrapper}>

@@ -44,7 +44,11 @@ export default function ClientProductsWrapper({ items }: any) {
               </span>
             </h1>
           </div>
-          <p>
+          <p
+            style={{
+              fontWeight: "200",
+            }}
+          >
             Una selección única de madurados y delicatessen que elevan cualquier
             experiencia culinaria. Desde jamones, hasta chorizos y quesos de
             calidad superior, nuestros productos son creados para inspirar a los

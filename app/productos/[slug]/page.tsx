@@ -195,8 +195,21 @@ export default function Home() {
                 backgroundSize: "cover",
               }}
             >
-              <h2>CREACIÓN</h2>
-              <p>{productDetails.creation}</p>
+              <h2
+                style={{
+                  fontSize: "32px",
+                  marginBottom: "16px",
+                }}
+              >
+                CREACIÓN
+              </h2>
+              <p
+                style={{
+                  fontWeight: "200",
+                }}
+              >
+                {productDetails.creation}
+              </p>
             </div>
           </div>
 
@@ -210,8 +223,21 @@ export default function Home() {
               {productDetails.bulletPoints?.map((bulletPoint, index) => (
                 <div className={styles.item} key={index}>
                   <img src={redBullet.src} alt="Bulletpoint" />
-                  <h6>{bulletPoint.title}</h6>
-                  <p>{bulletPoint.description}</p>
+                  <h6
+                    style={{
+                      fontSize: "28px",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {bulletPoint.title}
+                  </h6>
+                  <p
+                    style={{
+                      fontWeight: "200",
+                    }}
+                  >
+                    {bulletPoint.description}
+                  </p>
                 </div>
               ))}
             </div>

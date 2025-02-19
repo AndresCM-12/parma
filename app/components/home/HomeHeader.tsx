@@ -10,7 +10,13 @@ export default function HomeHeader({ homeInfo }: any) {
         <h1>{homeInfo.title}</h1>
         <img src={parmaWhiteLogo.src} alt="Logo de parma" />
       </div>
-      <p>{homeInfo.description}</p>
+      <p
+        style={{
+          fontWeight: "200",
+        }}
+      >
+        {homeInfo.description}
+      </p>
       <a href={homeInfo.btnLink}>{homeInfo.btnText}</a>
     </div>
   );
