@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { Poppins } from "next/font/google";
+import { fetchMetaData } from "../utils/methods";
+import { contactoMD } from "../utils/constants";
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Parma | Contacto",
-  description: "Marca premium de Sabori",
-};
+export async function generateMetadata({ params }: any) {
+  const metaData = await fetchMetaData(contactoMD);
+  return metaData;
+}
 
 //Add google fonts gotham
 

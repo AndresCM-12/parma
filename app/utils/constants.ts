@@ -19,6 +19,43 @@ export const maridajePage = "maridaje";
 export const reviewsPage = "resenas";
 export const blogsPage = "blog";
 
+//MetaData
+export const homeMD = "home";
+export const adminMD = "admin";
+export const blogMD = "blog";
+export const contactoMD = "contacto";
+export const dondeMD = "donde";
+export const foroMD = "foro";
+export const marcaMD = "marca";
+export const maridajesMD = "maridajes";
+export const productosMD = "productos";
+export const recetasMD = "recetas";
+export const resenasMD = "resenas";
+export const detallesRecetasMD = "detalles-recetas";
+export const detallesProductosMD = "detalles-productos";
+export const detallesProductosIndividualMD = "productos-individual";
+
+export const getMetaDataGraphqlQuery = (postName: string) => {
+  return `
+    query get_post_by_name {
+      categories(where: {name: "metadata"}) {
+        edges {
+          node {
+            id
+            posts(where: {name: "${postName}"}) {
+              edges {
+                node {
+                  content
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    `;
+};
+
 export const getSectionsGraphqlQuery = (postName: string) => {
   return `
     query get_post_by_name {
@@ -39,6 +76,7 @@ export const getSectionsGraphqlQuery = (postName: string) => {
     }
     `;
 };
+
 export const gePageInfo = (pageName: string) => {
   return `
     query get_page_by_name {
@@ -59,6 +97,7 @@ export const gePageInfo = (pageName: string) => {
     }
     `;
 };
+
 export const getDetailPageInfo = (pageName: string) => {
   return `
     query get_detail_page_by_name {

@@ -3,6 +3,8 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
+import { fetchMetaData } from "./utils/methods";
+import { homeMD } from "./utils/constants";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -19,10 +21,10 @@ const undergrowth = localFont({
   variable: "--font-undergrow",
 });
 
-export const metadata: Metadata = {
-  title: "Parma",
-  description: "Marca premium de Sabori",
-};
+export async function generateMetadata({ params }: any) {
+  const metaData = await fetchMetaData(homeMD);
+  return metaData;
+}
 
 export default function RootLayout({
   children,
