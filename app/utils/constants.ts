@@ -22,18 +22,18 @@ export const blogsPage = "blog";
 //MetaData
 export const homeMD = "home";
 export const adminMD = "admin";
-export const blogMD = "blog";
+export const blogMD = "blog-2";
 export const contactoMD = "contacto";
 export const dondeMD = "donde";
 export const foroMD = "foro";
-export const marcaMD = "marca";
-export const maridajesMD = "maridajes";
-export const productosMD = "productos";
-export const recetasMD = "recetas";
+export const marcaMD = "marca-2";
+export const maridajesMD = "maridajes-2";
+export const productosMD = "productos-2";
+export const recetasMD = "recetasMD";
 export const resenasMD = "resenas";
 export const detallesRecetasMD = "detalles-recetas";
-export const detallesProductosMD = "detalles-productos";
-export const detallesProductosIndividualMD = "productos-individual";
+export const detallesProductosMD = "productos-2-2";
+export const detallesProductosIndividualMD = "productos-2-2-2";
 
 export const getMetaDataGraphqlQuery = (postName: string) => {
   return `
