@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import { fetchMetaData } from "./utils/methods";
 import { homeMD } from "./utils/constants";
+import GlobalPopUp from "./components/popup/GlobalPopUp";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -75,7 +76,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        {children}
+        <GlobalPopUp />
+      </body>
     </html>
   );
 }

@@ -1,0 +1,65 @@
+.rightWrapper {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 9999;
+  width: 100%;
+  background-color: #cac9c9;
+  padding-inline: 40px;
+  padding-block: 40px;
+}
+.rightWrapper .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.rightWrapper form {
+  display: flex;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+.rightWrapper form input {
+  border: none;
+  background-color: white;
+  height: 40px;
+  padding-inline: 16px;
+}
+.rightWrapper form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.rightWrapper .clientService {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 400;
+  gap: 0px;
+  font-size: 14px;
+  line-height: 16px;
+}
+@media screen and (max-width: 880px) {
+  .footerWrapper .leftWrapper {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .footerWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footerWrapper {
+    padding-inline: 16px;
+  }
+}

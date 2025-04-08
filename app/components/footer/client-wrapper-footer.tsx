@@ -3,10 +3,19 @@ import React from "react";
 
 export default function ClientWrapperFooter() {
   const [isLoading, setLoading] = React.useState(false);
-
+  const [email, setEmail] = React.useState("");
+  const handleChange = (event: any) => {
+    const value = event.target.value;
+    setEmail(value);
+  };
   return (
     <form action="POST">
-      <input type="email" id="footerEmail" placeholder="Correo electrónico" />
+      <input
+        type="email"
+        id="footerEmail"
+        onChange={handleChange}
+        placeholder="Correo electrónico"
+      />
       <button
         disabled={isLoading}
         style={{
@@ -18,9 +27,6 @@ export default function ClientWrapperFooter() {
           setLoading(true);
           event.preventDefault();
           try {
-            const email = (
-              document.querySelector("#footerEmail") as HTMLInputElement
-            ).value;
             const response = await fetch("/api/subscribe", {
               body: JSON.stringify({
                 email: email,

@@ -7,6 +7,7 @@ export const featuredBlogs = "featured-blogs";
 export const whereFindUs = "where-find-us";
 export const featuredReviews = "featured-reviews";
 export const homePage = "home-featured";
+export const globalPopUp = "global-popup";
 
 //Pages
 export const brandPage = "marca";
